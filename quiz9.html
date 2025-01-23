@@ -368,8 +368,8 @@
             let mistakeText = "Błędne odpowiedzi:<br>";
             mistakes.forEach((mistake, index) => {
                 mistakeText += `${index + 1}. ${mistake.question}<br>
-                                Twoje odpowiedzi: ${mistake.selectedAnswer.join(<br>)}<br>
-                                Poprawne odpowiedzi: ${mistake.correctAnswer.join(<br>)}<br><br>`;
+                                Twoje odpowiedzi: ${mistake.selectedAnswer.join("<br>")}<br>
+                                Poprawne odpowiedzi: ${mistake.correctAnswer.join("<br>")}<br><br>`;
             });
             document.getElementById("mistakes").innerHTML = mistakeText;
         } else {
