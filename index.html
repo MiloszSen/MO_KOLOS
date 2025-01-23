@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLOS MO</title>
+    <style>
+        /* Ustawienia globalne */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Kontener kafelków */
+        .grid {
+            display: grid;
+            grid-template-columns: minmax(150px, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        /* Nowoczesny styl kafelków */
+        .tile {
+            background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 120px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efekt najechania dla kafelków */
+        .tile::before {
+            content: "";
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(120deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .tile:hover::before {
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+
+        .tile:hover {
+            background: linear-gradient(145deg, #3c3c3c, #2a2a2a);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsywny układ kafelków na małych ekranach */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nowoczesny kontener kafelków -->
+    <div class="grid">
+        <a href="quiz9.html" class="tile">ZAMKNIETE</a>
+    </div>
+
+</body>
+</html>
