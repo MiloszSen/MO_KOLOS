@@ -369,7 +369,7 @@
             mistakes.forEach((mistake, index) => {
                 mistakeText += `${index + 1}. ${mistake.question}<br>
                                 Twoje odpowiedzi: ${mistake.selectedAnswer.join(", ")}<br>
-                                Poprawne odpowiedzi: ${mistake.correctAnswer.join(", ")}<br><br>`;
+                                Poprawne odpowiedzi: ${mistake.correctAnswer.join(",\n ")}<br><br>`;
             });
             document.getElementById("mistakes").innerHTML = mistakeText;
         } else {
