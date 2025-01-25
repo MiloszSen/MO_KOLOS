@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAMKNIETE MO</title>
+    <title>SPOTKANIA AA
     <style>
         /* Nowoczesny styl dla quizu */
         body {
@@ -102,7 +102,7 @@
 <body>
 
 <div class="quiz-container">
-    <h1>ZAMKNIETE MO</h1>
+    <h1>SPOTKANIA AA</h1>
     <div id="question-container">
         <div class="question" id="question">Pytanie pojawi się tutaj</div>
         <div class="options">
@@ -120,159 +120,630 @@
 
 <script>
     const questions = [
-        {
-            "question": "Metody funkcji kary zewnętrznej. Problem optymalizacji sprowadza się do:",
+    {
+            "question": "Które z podanych elementów nie mają bezpośredniego kontaktu z wielkością regulowaną?",
             "options": [
-                "dodania funkcji kary do funkcji celu",
-                "własności funkcji kary: funkcja kary powinna być ciągła i jeśli jest rozwiązaniem dopuszczalnym wówczas S(x)=0; w przeciwnym razie S(x)>0",
-                "punkt startowy musi należeć do zbioru rozwiązań dopuszczalnych",
-                "zastąpienia optymalizacji z ograniczeniami optymalizacją bez ograniczeń"
+                "Czujnik pomiarowy",
+                "Przetwornik pomiarowy",
+                "Regulator",
+                "Element nastawczy (np. grzybek zaworu)"
             ],
             "answer": [
-                "dodania funkcji kary do funkcji celu",
-                "własności funkcji kary: funkcja kary powinna być ciągła i jeśli jest rozwiązaniem dopuszczalnym wówczas S(x)=0; w przeciwnym razie S(x)>0",
-                "zastąpienia optymalizacji z ograniczeniami optymalizacją bez ograniczeń"
+                "Regulator",
+                "Przetwornik pomiarowy",
+                "Element nastawczy (np. grzybek zaworu)"
             ]
         },
         {
-        "question": "Metody funkcji kary wewnętrznej. Problem optymalizacji sprowadza się do:",
-        "options": [
-            "zastąpienia optymalizacji z ograniczeniami optymalizacją bez ograniczeń",
-            "punkt startowy musi należeć do zbioru rozwiązań dopuszczalnych",
-            "dodaniu funkcji kary do funkcji celu",
-            "własności funkcji kary: funkcja kary powinna być ciągła i jeśli jest rozwiązaniem dopuszczalnym wówczas S(x)=0; w przeciwnym razie S(x)>0"
-        ],
-        "answer": [
-            "zastąpienia optymalizacji z ograniczeniami optymalizacją bez ograniczeń",
-            "punkt startowy musi należeć do zbioru rozwiązań dopuszczalnych",
-            "dodaniu funkcji kary do funkcji celu"
-        ]
-    },
-    {
-        "question": "W metodzie największego spadku kolejny punkt x(i+1) przybliżający minimum dany jest wzorem:",
-        "options": [
-            "x(i+1) = x(i) - h(i) H^(-1)(x(i)) ∇f(x(i))",
-            "x(i+1) = x(i) + h(i) ∇f(x(i))",
-            "x(i+1) = x(i) + h(i) d(i)",
-            "x(i+1) = x(i) - h(i) ∇f(x(i))"
-        ],
-        "answer": [
-            "x(i+1) = x(i) + h(i) d(i)",
-            "x(i+1) = x(i) - h(i) ∇f(x(i))"
-        ]
-    },
-    {
-        "question": "W metodzie Newtona kolejny punkt x(i+1) przybliżający minimum dany jest wzorem:",
-        "options": [
-            "x(i+1) = x(i) + h(i) d(i)",
-            "x(i+1) = x(i) - h(i) H^(-1)(x(i)) ∇f(x(i))",
-            "x(i+1) = x(i) - h(i) ∇f(x(i))",
-            "x(i+1) = x(i) + h(i) H^(-1)(x(i)) ∇f(x(i))"
-        ],
-        "answer": [
-            "x(i+1) = x(i) + h(i) d(i)",
-            "x(i+1) = x(i) - h(i) H^(-1)(x(i)) ∇f(x(i))"
-        ]
-    },
-        {
-            "question": "Wynikiem poszukiwań metodą ekspansji dla spełnionego warunku końcowego stopu jest:",
+            "question": "Które z podanych elementów ma bezpośredni kontakt z fizyczną wielkością regulowaną?",
             "options": [
-                "Punkt x(i)",
-                "Przedział [x(i-1), x(i+1)] zawierający wartość minimalną.",
-                "Przedział [x(i), x(i+1)] zawierający wartość minimalną.",
-                "Przedział [x(i-1), x(i)] zawierający wartość minimalną."
+                "Czujnik pomiarowy",
+                "Przetwornik pomiarowy",
+                "Regulator",
+                "Siłownik"
             ],
-            "answer": "Przedział [x(i-1), x(i+1)] zawierający wartość minimalną."
+            "answer": [
+                "Czujnik pomiarowy"
+            ]
         },
         {
-            "question": "Dla spełnionego warunku f(x') ≥ f(x(i+1)) metoda ekspansji:",
+            "question": "Jakie elementy znajdują się w systemie montażu czujnika ciśnienia gazu?",
             "options": [
-                "Zwraca wynik, przedział [x(i), x(i+1)].",
-                "Zwraca wynik, przedział [x(i-1), x(i+1)] zawierający minimum funkcji celu.",
-                "Zwraca wynik, przedział [x(i-1), x(i)] zawierający minimum funkcji celu.",
-                "Rozszerza przedział poszukiwań."
+                "zawór odcinający",
+                "terminator",
+                "przewody kompensacyjne",
+                "odwadniacz"
             ],
-            "answer": "Rozszerza przedział poszukiwań."
+            "answer": [
+                "zawór odcinający",
+                "odwadniacz"
+            ]
         },
         {
-            "question": "Jeśli zachodzi warunek f(x(1))=f(x(0)) dla spełnionych założeń metody ekspansji to:",
+            "question": "Dla jakiego materiału można użyć przepływomierza indukcyjnego?",
             "options": [
-                "Minimum występuje w przedziale [x(0), x(1)].",
-                "Funkcja nie jest unimodalna.",
-                "Maximum występuje w przedziale [x(0), x(1)].",
-                "Nie można wnioskować, że minimum występuje w przedziale [x(0), x(1)]."
+                "płynna parafina",
+                "benzyna",
+                "kwas siarkowy",
+                "olej rzepakowy"
             ],
-            "answer": "Minimum występuje w przedziale [x(0), x(1)]."
+            "answer": [
+                "kwas siarkowy"
+            ]
         },
         {
-            "question": "Warunkiem koniecznym wyznaczenia przedziału zawierającego minimum globalne w metodzie ekspansji jest:",
+            "question": "Jakiego czujnika temperatury należy użyć w procesie pasteryzacji (zakres do ok. 100 ℃)?",
             "options": [
-                "Unimodalność funkcji celu.",
-                "n-krotna różniczkowalność funkcji celu.",
-                "Różniczkowalność funkcji celu.",
-                "Ograniczoność przedziału poszukiwań."
+                "termopara",
+                "Pt100",
+                "Ni100",
+                "Pirometr"
             ],
-            "answer": "Unimodalność funkcji celu."
+            "answer": [
+                "Pt100",
+                "Ni100"
+            ]
         },
         {
-            "question": "Jeżeli w i-tej iteracji zachodzi zależność a(i) < c(i) < d(i) oraz f(c(i)) < f(d(i)), to w kolejnej iteracji:",
+            "question": "W układzie regulacji temperatury w piecu do wypalania ceramiki (zakres temperatur do około 1300 ℃) należy zastosować:",
             "options": [
-                "Zmienia się ograniczenie lewostronne.",
-                "Spełniony jest warunek stopu.",
-                "Zmienia się ograniczenie prawostronne.",
-                "Funkcja nie jest unimodalna."
+                "Żaden z powyższych czujników się nie nadaje",
+                "Czujnik Ni100",
+                "Termoparę",
+                "Czujnik Pt100"
             ],
-            "answer": "Zmienia się ograniczenie prawostronne."
+            "answer": [
+                "Termoparę"
+            ]
         },
         {
-            "question": "Wynikiem optymalizacji metodą złotego podziału jest:",
+            "question": "Jakie wymagania musi spełniać sieć przemysłowa?",
             "options": [
-                "a(i)",
-                "b(i)",
-                "(b(i)-a(i))/2",
-                "|b(i)-a(i)|"
+                "determinizm czasowy",
+                "łatwość dołączania prostych urządzeń",
+                "zasilanie urządzeń wprost z magistrali",
+                "przesyłanie danych o zmiennej wielkości w różnych porach"
             ],
-            "answer": "(b(i)-a(i))/2"
+            "answer": [
+                "determinizm czasowy",
+                "łatwość dołączania prostych urządzeń",
+                "zasilanie urządzeń wprost z magistrali"
+            ]
         },
         {
-            "question": "Jeżeli w i-tej iteracji zachodzi zależność a(i) < d(i) < c(i) oraz f(d(i)) < f(c(i)), to w kolejnej iteracji:",
+            "question": "Które z przedstawionych urządzeń automatyzacji może pracować w środowisku silnie wybuchowym?",
             "options": [
-                "Zmienia się ograniczenie prawostronne.",
-                "Funkcja osiąga minimum.",
-                "Zmienia się ograniczenie lewostronne.",
-                "Spełniony jest warunek stopu."
+                "Siłownik pneumatyczny",
+                "Profibus PA",
+                "Regulator pneumatyczny PID",
+                "Siłownik elektryczny w obudowie przewietrzanej"
             ],
-            "answer": "Zmienia się ograniczenie prawostronne."
+            "answer": [
+            "Siłownik pneumatyczny",
+            "Profibus PA",
+            "Regulator pneumatyczny PID",    
+            "Siłownik elektryczny w obudowie przewietrzanej"
+            ]
         },
         {
-            "question": "Wynikiem optymalizacji metodą Lagrange'a dla b(i)-a(i)<ε jest:",
+            "question": "Co może znacząco wydłużyć czas cyklu sterownika PLC?",
             "options": [
-                "b(i)",
-                "a(i)",
-                "d(i)",
-                "(b(i)-a(i))/2"
+                "Wyznaczanie wartości funkcji trygonometrycznych",
+                "Obliczenia i porównania na liczbach zmiennoprzecinkowych (REAL)",
+                "Obliczenia na liczbach całkowitych (INT)",
+                "Obliczenia na zmiennych typu BOOL"
             ],
-            "answer": "d(i)"
+            "answer": [
+                "Wyznaczanie wartości funkcji trygonometrycznych",
+                "Obliczenia i porównania na liczbach zmiennoprzecinkowych (REAL)"
+            ]
         },
         {
-            "question": "Jeżeli etap próbny nie przynosi poprawy wartości funkcji celu w stosunku do wartości w punkcie startowym dla s > ε to:",
+            "question": "Które z podanych poniżej czynników nie wydłużają znacząco czasu cyklu i/lub czasu odpowiedzi sterownika PLC?",
             "options": [
-                "Kolejnym krokiem jest wykonanie etapu roboczego.",
-                "Należy zmienić krok poszukiwań s=αs.",
-                "Spełniony jest warunek stopu.",
-                "Należy zmienić bazę."
+                "Operacje logiczne na bitach",
+                "Obliczanie funkcji trygonometrycznych",
+                "Operacje na danych całkowitych (typu INT, DINT)",
+                "Operacje obliczeniowe i porównania wykonywane na danych typu REAL"
             ],
-            "answer": "Należy zmienić krok poszukiwań s=αs."
+            "answer": [
+                "Operacje logiczne na bitach",
+                "Operacje na danych całkowitych (typu INT, DINT)"
+            ]
         },
         {
-            "question": "Wynik optymalizacji metodą Hooke'a-Jeevesa dla s < ε to:",
+            "question": "Regulator bezpośredniego działania",
             "options": [
-                "Współrzędne ostatniej bazy.",
-                "x ← x + se(j).",
-                "||x||",
-                "x = 2x(B) - x̄(B)"
+                "Regulator proporcjonalny",
+                "PID",
+                "II-położeniowy",
+                "Specjalistyczny"
             ],
-            "answer": "Współrzędne ostatniej bazy."
+            "answer": [
+                "II-położeniowy",    
+                "Regulator proporcjonalny"
+            ]
+        },
+        {
+            "question": "Regulator bezpośredniego działania",
+            "options": [
+                "Umożliwia realizację sterowania dwupołożeniowego",
+                "Umożliwia realizację sterowania proporcjonalnego (typu P)",
+                "Posiada port komunikacyjny",
+                "Wymaga dodatkowego zasilania"
+            ],
+            "answer": [
+                "Umożliwia realizację sterowania dwupołożeniowego",    
+                "Umożliwia realizację sterowania proporcjonalnego (typu P)"
+            ]
+        },
+        {
+            "question": "Co wchodzi w skład sterownika PLC?",
+            "options": [
+                "napęd CD",
+                "wentylator chłodzący zasilacz",
+                "Karta SD/SDHC",
+                "Przekaźnik SSR"
+            ],
+            "answer": [
+                "Karta SD/SDHC"
+            ]
+        },
+        {
+            "question": "Typy urządzeń w sieci Profinet?",
+            "options": [
+                "IO Controller",
+                "IO Device",
+                "IO Server",
+                "żadne z powyższych"
+            ],
+            "answer": [
+                "IO Controller",
+                "IO Device"
+            ]
+        },
+        {
+            "question": "Warstwy sieci dla HART wg modelu OSI",
+            "options": [
+                "sieciowa",
+                "fizyczna",
+                "aplikacyjna",
+                "sesji"
+            ],
+            "answer": [
+                "fizyczna",
+                "aplikacyjna"
+            ]
+        },
+        {
+            "question": "Co oznacza %IW4?",
+            "options": [
+                "wejście analogowe",
+                "wejście binarne",
+                "wyjście analogowe",
+                "komórka wewnętrzna pamięci"
+            ],
+            "answer": [
+                "wejście analogowe"
+            ]
+        },
+        {
+            "question": "W jakich sytuacjach stosujemy przetwornik międzysystemowy?",
+            "options": [
+                "znormalizowany sygnał prądowy na znormalizowane napięcie",
+                "znormalizowany sygnał prądowy na znormalizowany sygnał pneumatyczny",
+                "w celu kompensacji zakłóceń czy coś",
+                "w celu wzmocnienia sygnału"
+            ],
+            "answer": [
+                "znormalizowany sygnał prądowy na znormalizowane napięcie",
+                "znormalizowany sygnał prądowy na znormalizowany sygnał pneumatyczny"
+            ]
+        },
+        {
+            "question": "Regulator PID w S7 1200, jakich elementów należy użyć do jego skonfigurowania?",
+            "options": [
+                "Blok cykliczny OB30",
+                "Blok danych DB",
+                "Instancja bloku funkcyjnego FB",
+                "Podprogram"
+            ],
+            "answer": [
+                "Blok cykliczny OB30",
+                "Blok danych DB",
+                "Instancja bloku funkcyjnego FB"
+            ]
+        },
+        {
+            "question": "Jakie elementów należy użyć przy konfiguracji Grafu Sekwencji SFC",
+            "options": [
+                "Etap",
+                "Przejście",
+                "Działanie",
+                "Język LD"
+            ],
+            "answer": [
+                "Etap",
+                "Przejście",
+                "Działanie"
+            ]
+        },
+        {
+            "question": "Które z poniższych elementów automatyki mogą być zlokalizowane wewnątrz tunelu akceleratora (np. w CERN) w bezpośrednim sąsiedztwie rozpędzanych cząstek?",
+            "options": [
+                "Siłownik pneumatyczny",
+                "Kabel sieciowy typu „skrętka”",
+                "Pneumatyczny regulator PID",
+                "Sterownik PID"
+            ],
+            "answer": [
+                "Siłownik pneumatyczny",
+                "Pneumatyczny regulator PID"
+            ]
+        },
+        {
+            "question": "W którym z poniższych zakładów produkcyjnych należy zastosować iskrobezpieczne elementy automatyki?",
+            "options": [
+                "Kopalnia węgla kamiennego",
+                "Tartak",
+                "Stacja uzdatniania wody",
+                "Zakład ceramiki budowlanej"
+            ],
+            "answer": [
+                "Kopalnia węgla kamiennego",
+                "Tartak"
+            ]
+        },
+        {
+            "question": "Sterownik PLC w sieci PROFINET IO to:",
+            "options": [
+                "IO Controller",
+                "IO Device",
+                "IO Server",
+                "IO Supervisor"
+            ],
+            "answer": [
+                "IO Controller"
+            ]
+        },
+        {
+            "question": "Dostrajanie regulatora PID metodą cyklu granicznego",
+            "options": [
+                "Wymaga wyznaczenia czasu martwego i stałej czasowej obiektu",
+                "Wymaga wyznaczenia wzmocnienia krytycznego obiektu i okresu oscylacji nietłumionych na wyjściu układu",
+                "Wymaga znajomości wzmocnienia statycznego obiektu",
+                "Odbywa się w układzie zamkniętym"
+            ],
+            "answer": [
+                "Odbywa się w układzie zamkniętym",
+                "Wymaga wyznaczenia wzmocnienia krytycznego obiektu i okresu oscylacji nietłumionych na wyjściu układu"
+            ]
+        },
+        {
+            "question": "Podać zalety sterowania bazującego na komputerze PC w przemyśle:",
+            "options": [
+                "Niezależność od platformy sprzętowej",
+                "Duża szybkość działania",
+                "Znormalizowane metody działania",
+                "Wysoka niezawodność działania"
+            ],
+            "answer": [
+                "Niezależność od platformy sprzętowej",
+                "Duża szybkość działania"
+            ]
+        },
+        {
+            "question": "Które z poniższych cech opisują siłownik pneumatyczny:",
+            "options": [
+                "Przeciążalność organu ruchomego bez ryzyka uszkodzenia",
+                "Pełne iskrobezpieczeństwo",
+                "Łatwa realizacja pomocniczego sterowania ręcznego",
+                "W przypadku zaniku zasilania organ ruchomy pozostaje w ostatnim położeniu"
+            ],
+            "answer": [
+                "Przeciążalność organu ruchomego bez ryzyka uszkodzenia",
+                "Pełne iskrobezpieczeństwo"
+            ]
+        },
+        {
+            "question": "W których z wymienionych poniżej sytuacji należy zastosować przetwornik międzysystemowy w systemie automatyki?",
+            "options": [
+                "Wyjście z przetwornika pomiarowego ma zakres 0-5[mA], wejście wielkości regulowanej na regulator ma zakres 4-20[mA]",
+                "Wyjście z regulator ma zakres 4-20[mA] a wejście na siłownik ma zakres 20-100[kPa]",
+                "Wyjście z przetwornika pomiarowego ma zakres 4-20[mA] wejście wielkości regulowanej na regulator ma zakres 4-20[mA]",
+                "Przetwornik pomiarowy oraz jednostka centralna regulatora są połączone z użyciem sieci PROFIBUS DP"
+            ],
+            "answer": [
+                "Wyjście z przetwornika pomiarowego ma zakres 0-5[mA], wejście wielkości regulowanej na regulator ma zakres 4-20[mA]",
+                "Wyjście z regulator ma zakres 4-20[mA] a wejście na siłownik ma zakres 20-100[kPa]"
+            ]
+        },
+        {
+            "question": "Zawory rozdzielające są elementem układu sterowania:",
+            "options": [
+                "Siłownika elektrycznego",
+                "Siłownika hydraulicznego tłokowego",
+                "Siłownika pneumatycznego tłokowego",
+                "Żadnego z powyższych"
+            ],
+            "answer": [
+                "Siłownika hydraulicznego tłokowego",
+                "Siłownika pneumatycznego tłokowego"
+            ]
+        },
+        {
+            "question": "Czujnik ciśnienia przeznaczony do pomiaru ciśnienia gazu powinien być zamontowany:",
+            "options": [
+                "Nad rurą lub zbiornikiem",
+                "Pod rurą lub zbiornikiem",
+                "Na poziomie środka rury lub zbiornika",
+                "Nie ma znaczenia"
+            ],
+            "answer": [
+                "Nad rurą lub zbiornikiem"
+            ]
+        },
+        {
+            "question": "Która z podanych poniżej sieci wymaga stosowania terminatorów?",
+            "options": [
+                "Pierścieniowa",
+                "Magistralowa",
+                "Gwieździsta",
+                "Siatkowa"
+            ],
+            "answer": [
+                "Magistralowa"
+            ]
+        },
+        {
+            "question": "W przypadku, którego z podanych poniżej obiektów/instalacji technologicznych należy stosować aparaturę automatyki w wykonaniu iskrobezpiecznym?",
+            "options": [
+                "Stacja redukcyjno-pomiarowa gazu ziemnego",
+                "Linia produkcyjna nitrogliceryny",
+                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
+                "Młyn zbożowy"
+            ],
+            "answer": [
+                "Stacja redukcyjno-pomiarowa gazu ziemnego",
+                "Linia produkcyjna nitrogliceryny",
+                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
+                "Młyn zbożowy"
+            ]
+        },
+        {
+            "question": "Maksymalnego obciążenie rezystancyjne w pętli prądowej 4-20mA obwodu wyjściowego przetwornika jest równe:",
+            "options": [
+                "1000 ohma",
+                "500 ohma",
+                "750 ohma",
+                "100 ohma"
+            ],
+            "answer": [
+                "500 ohma"
+            ]
+        },
+        {
+            "question": "Które z podanych poniżej wymagań musi spełnić sieć przemysłowa?",
+            "options": [
+                "Determinizm czasowy podczas działania",
+                "Łatwe dołączanie prostych urządzeń",
+                "Możliwość przesyłania dużych ilości danych o zmiennym i nieprzewidywalnym natężeniu",
+                "Możliwość zasilania urządzeń z magistrali"
+            ],
+            "answer": [
+                "Determinizm czasowy podczas działania",
+                "Łatwe dołączanie prostych urządzeń",
+                "Możliwość zasilania urządzeń z magistrali"
+            ]
+        },
+        {
+            "question": "Która z podanych poniżej warstw 7 warstwowego modelu OSI jest stosowana w sieci PROFIBUS?",
+            "options": [
+                "Warstwa fizyczna",
+                "Warstwa sieciowa",
+                "Warstwa sesji",
+                "Warstwa łącza danych (liniowa)"
+            ],
+            "answer": [
+                "Warstwa fizyczna",
+                "Warstwa łącza danych (liniowa)"
+            ]
+        },
+        {
+            "question": "W układzie sterowania i nadzoru młyna kołowego stosowane są czujniki:",
+            "options": [
+                "Ciśnienia",
+                "Temperatury",
+                "Natężenia przepływu",
+                "Poziomu materiału"
+            ],
+            "answer": [
+                "Ciśnienia",
+                "Temperatury",
+                "Natężenia przepływu"
+            ]
+        },
+        {
+            "question": "Dany jest czujnik temperatur o oznaczeniu Pt500 jest to czujnik:",
+            "options": [
+                "Platynowy o rezystancji 500Ω w temperaturze 100⁰C",
+                "Platynowy o rezystancji 500Ω w temperaturze 0⁰C",
+                "Platynowy o rezystancji 100Ω w temperaturze 500⁰C",
+                "Platynowy o rezystancji 500Ω w temperaturze 25⁰C"
+            ],
+            "answer": [
+                "Platynowy o rezystancji 500Ω w temperaturze 0⁰C"
+            ]
+        },
+        {
+            "question": "Natężenie przepływu których z wymienionych cieczy może być mierzone z użyciem przepływomierza indukcyjnego?",
+            "options": [
+                "Sok pomarańczowy",
+                "Olej rzepakowy",
+                "Kwas siarkowy",
+                "Benzyna"
+            ],
+            "answer": [
+                "Sok pomarańczowy",
+                "Kwas siarkowy"
+            ]
+        },
+        {
+            "question": "Która z podanych poniżej warstw 7 warstwowego modelu OSI jest stosowana w sieci HART?",
+            "options": [
+                "Warstwa fizyczna",
+                "Aplikacyjna",
+                "Warstwa sesji",
+                "Warstwa łącza danych (liniowa)"
+            ],
+            "answer": [
+                "Warstwa fizyczna",
+                "Aplikacyjna",
+                "Warstwa łącza danych (liniowa)"
+            ]
+        },
+        {
+            "question": "W przypadku sterowania silnika elektrycznego przez sterownik PLC należy zastosować jeden z następujących elementów wykonawczych:",
+            "options": [
+                "Stycznik",
+                "Przekaźnik",
+                "Potencjometr",
+                "Falownik"
+            ],
+            "answer": [
+                "Falownik"
+            ]
+        },
+        {
+            "question": "Podczas dostrajania regulatora PID do procesu metodą Astroma-Hagglunda stosowany jest regulator:",
+            "options": [
+                "Proporcjonalny (typ P)",
+                "Dwupołożeniowy",
+                "Trójpołożeniowy z histerezą",
+                "Trójpołożeniowy bez histerezy"
+            ],
+            "answer": [
+                "Dwupołożeniowy"
+            ]
+        },
+        {
+            "question": "Które z wymienionych poniżej elementów nie są częścią składową sterownika PLC?",
+            "options": [
+                "Pamięć RAM",
+                "Pamięć dyskowa",
+                "Wentylator chłodzący zasilacz",
+                "Układ wejść binarnych"
+            ],
+            "answer": [
+                "Pamięć dyskowa",
+                "Wentylator chłodzący zasilacz"
+            ]
+        },
+        {
+            "question": "W układzie sterowania instalacją kriogeniki dla akceleratora są stosowane czujniki:",
+            "options": [
+                "Poziomu",
+                "Temperatury",
+                "Ciśnienia",
+                "Żadne z wyżej wymienionych"
+            ],
+            "answer": [
+                "Poziomu",
+                "Temperatury",
+                "Ciśnienia"
+            ]
+        },
+        {
+            "question": "W przypadku, którego z podanych poniżej obiektów/instalacji technologicznych należy stosować aparaturę automatyki w wykonaniu iskrobezpiecznym?",
+            "options": [
+                "Stacja redukcyjno-pomiarowa gazu ziemnego",
+                "tartak",
+                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
+                "Młyn zbożowy"
+            ],
+            "answer": [
+                "Stacja redukcyjno-pomiarowa gazu ziemnego",
+                "tartak",
+                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
+                "Młyn zbożowy"
+            ]
+        },
+        {
+            "question": "W przypadku sterowania grzałki elektrycznej o mocy 300W zasilanej napięciem 230V AC przez sterownik PLC należy zastosować jeden z następujących elementów wykonawczych:",
+            "options": [
+                "Stycznik",
+                "Przekaźnik",
+                "Potencjometr",
+                "Siłownik pneumatyczny"
+            ],
+            "answer": [
+                "Przekaźnik"
+            ]
+        },
+        {
+            "question": "W systemie sterowania i nadzoru kombajnu górniczego KSW1140E są stosowane sieci przemysłowe:",
+            "options": [
+                "CAN",
+                "PROFIBUS",
+                "MODBUS",
+                "HART"
+            ],
+            "answer": [
+                "CAN",
+                "PROFIBUS",
+                "MODBUS",
+            ]
+        },
+        {
+            "question": "Które z poniższych cech opisują siłownik elektryczny:",
+            "options": [
+                "Łatwa realizacja pomocniczego sterowania ręcznego",
+                "Pełne iskrobezpieczeństwo",
+                "W przypadku zaniku zasilania organ ruchomy pozostaje w ostatnim położeniu",
+                "Przeciążalność organu ruchomego bez ryzyka uszkodzenia"
+            ],
+            "answer": [
+                "Łatwa realizacja pomocniczego sterowania ręcznego",
+                "W przypadku zaniku zasilania organ ruchomy pozostaje w ostatnim położeniu"
+            ]
+        },
+        {
+            "question": "Z wykorzystaniem przepływomierza indukcyjnego może być mierzone natężenie przepływu:",
+            "options": [
+                "Oleju napędowego",
+                "Oleju roślinnego",
+                "Benzyny",
+                "Żadnej z powyższych"
+            ],
+            "answer": [
+                "Żadnej z powyższych"
+            ]
+        },
+        {
+            "question": "Zaznaczyć czynniki zakłócające pomiar wagą tensometryczną:",
+            "options": [
+                "Zmienna temperatura otoczenia",
+                "Żaden z wymienionych czynników nie ma wpływu na dokładność ważenia",
+                "Wilgotność otoczenia",
+                "Starzenie się czujnika"
+            ],
+            "answer": [
+                "Zmienna temperatura otoczenia",
+                "Starzenie się czujnika"
+            ]
+        },
+        {
+            "question": "System montażowy czujnika ciśnienia cieczy zawiera następujące elementy:",
+            "options": [
+                "Przewody kompensacyjne",
+                "Odpowietrznik",
+                "Zawór odcinający",
+                "Terminator"
+            ],
+            "answer": [
+                "Odpowietrznik",
+                "Zawór odcinający"
+            ]
         }
     ];
 
@@ -368,8 +839,8 @@
             let mistakeText = "Błędne odpowiedzi:<br>";
             mistakes.forEach((mistake, index) => {
                 mistakeText += `${index + 1}. ${mistake.question}<br>
-                                Twoje odpowiedzi: ${mistake.selectedAnswer.join("<br>")}<br>
-                                Poprawne odpowiedzi: ${mistake.correctAnswer.join("<br>")}<br><br>`;
+                                Twoje odpowiedzi: ${mistake.selectedAnswer.join(", ")}<br>
+                                Poprawne odpowiedzi: ${mistake.correctAnswer.join(", ")}<br><br>`;
             });
             document.getElementById("mistakes").innerHTML = mistakeText;
         } else {
