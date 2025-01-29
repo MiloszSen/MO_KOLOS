@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPOTKANIA AA</title>
+    <title>AAAAAAAAA</title>
     <style>
         /* Nowoczesny styl dla quizu */
         body {
@@ -102,7 +102,7 @@
 <body>
 
 <div class="quiz-container">
-    <h1>SPOTKANIA AA</h1>
+    <h1>AAAAAAAAAAAAAAA</h1>
     <div id="question-container">
         <div class="question" id="question">Pytanie pojawi się tutaj</div>
         <div class="options">
@@ -744,7 +744,60 @@
                 "Odpowietrznik",
                 "Zawór odcinający"
             ]
-        }
+        },
+        {
+    "question": "Dostrajanie regulatora PID na podstawie transmitancji zastępczej:",
+    "options": [
+      "wymaga wyznaczenia czasu martwego i stałej czasowej obiektu",
+      "wymaga wyznaczenia wzmocnienia krytycznego obiektu i okresu oscylacji nietłumionych na wyjściu układu",
+      "odbywa się w układzie zamkniętym",
+      "pozwala na wyznaczenie nastaw optymalnych w sensie określonych funkcji kosztu"
+    ],
+    "answer": [
+      "wymaga wyznaczenia czasu martwego i stałej czasowej obiektu",
+      "pozwala na wyznaczenie nastaw optymalnych w sensie określonych funkcji kosztu"
+    ]
+  },
+  {
+    "question": "Silnik krokowy jako element urządzenia wykonawczego:",
+    "options": [
+      "jest sterowany w układzie otwartym",
+      "może być sterowany sygnałem PWM",
+      "ma dużą szybkość działania i możliwość szybkiej zmiany kierunku ruchu",
+      "może być stosowany tam, gdzie jest wymagana duża moc"
+    ],
+    "answer": [
+      "jest sterowany w układzie otwartym",
+      "ma dużą szybkość działania i możliwość szybkiej zmiany kierunku ruchu"
+    ]
+  },
+  {
+    "question": "W którym z wymienionych zakładów produkcyjnych należy zastosować iskrobezpieczne elementy automatyki?",
+    "options": [
+      "tartak",
+      "kopalnia węgla kamiennego",
+      "lakiernia",
+      "cementownia"
+    ],
+    "answer": [
+      "tartak",
+      "kopalnia węgla kamiennego",
+      "lakiernia"
+    ]
+  },
+  {
+    "question": "Który z elementów systemu automatyki ma bezpośredni kontakt z fizycznym sygnałem sterującym?",
+    "options": [
+      "sieć łącząca poszczególne elementy",
+      "element nastawczy (np. grzybek zaworu)",
+      "regulator",
+      "czujnik pomiarowy"
+    ],
+    "answer": [
+      "element nastawczy (np. grzybek zaworu)",
+      "czujnik pomiarowy"
+    ]
+  }
     ];
 
     let shuffledQuestions = [];
@@ -752,6 +805,9 @@
     let selectedAnswers = [];
     let score = 0;
     let mistakes = [];
+
+    // Tablica przechowująca aktualną, już potasowaną listę opcji (z informacją czy są poprawne)
+    let currentOptions = [];
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -761,8 +817,10 @@
     }
 
     function startQuiz() {
+        // Kopiujemy pytania i je tasujemy
         shuffledQuestions = [...questions];
         shuffle(shuffledQuestions);
+
         currentQuestionIndex = 0;
         score = 0;
         mistakes = [];
@@ -777,12 +835,27 @@
         const questionData = shuffledQuestions[currentQuestionIndex];
         document.getElementById("question").innerText = questionData.question;
 
-        // Czyszczenie zaznaczeń
+        // Tworzymy tablicę obiektów { text, correct }, by móc je tasować
+        currentOptions = questionData.options.map(opt => {
+            return {
+                text: opt,
+                correct: Array.isArray(questionData.answer)
+                    ? questionData.answer.includes(opt)
+                    : questionData.answer === opt
+            };
+        });
+
+        // Tasujemy opcje odpowiedzi
+        shuffle(currentOptions);
+
+        // Resetujemy zaznaczenie
         selectedAnswers = [];
 
-        const options = document.querySelectorAll(".options button");
-        options.forEach((button, index) => {
-            button.innerText = questionData.options[index];
+        // Podpinamy tekst do przycisków i usuwamy stare zaznaczenia
+        const buttons = document.querySelectorAll(".options button");
+        currentOptions.forEach((optionObj, index) => {
+            const button = buttons[index];
+            button.innerText = optionObj.text;
             button.classList.remove("selected");
             button.disabled = false;
         });
@@ -802,23 +875,21 @@
     }
 
     function checkAnswer() {
-        const questionData = shuffledQuestions[currentQuestionIndex];
-        
-        // Wyznaczamy indeksy poprawnych odpowiedzi
-        const correctAnswers = Array.isArray(questionData.answer)
-            ? questionData.answer.map(ans => questionData.options.indexOf(ans))
-            : [questionData.options.indexOf(questionData.answer)];
+        // Wyznaczamy indeksy poprawnych odpowiedzi w potasowanej tablicy
+        const correctIndexes = currentOptions
+            .map((obj, i) => obj.correct ? i : -1)
+            .filter(i => i >= 0);
 
-        // Sprawdzamy zgodność tablic (porównanie sortowanych)
-        if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctAnswers.sort())) {
+        // Porównujemy wybrane indeksy z indeksami poprawnych
+        if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctIndexes.sort())) {
             score++;
         } else {
+            const questionData = shuffledQuestions[currentQuestionIndex];
+            // Zapisujemy błędną odpowiedź w mistakes
             mistakes.push({
                 question: questionData.question,
-                selectedAnswer: selectedAnswers.map(index => questionData.options[index]),
-                correctAnswer: Array.isArray(questionData.answer)
-                    ? questionData.answer
-                    : [questionData.answer]
+                selectedAnswer: selectedAnswers.map(idx => currentOptions[idx].text),
+                correctAnswer: correctIndexes.map(idx => currentOptions[idx].text)
             });
         }
 
