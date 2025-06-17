@@ -144,6 +144,18 @@ const questions = [
     ]
   },
   {
+    question: "Wektor własny pierwszej składowej ma postać w1 = [0.3, 0.4, 0.8, -0.4]. Oznacza to, że:",
+    options: [
+      "Każdy przypadek w zbiorze danych opisują cztery cechy.",
+      "Pierwsza składowa główna jest liczona jako średnia ważona kolejnych cech zbioru i elementów tego wektora własnego, postaci: x1*0.3 + x2*0.4 + x3*0.8 + x4*(-0.4).",
+      "Nie może istnieć taki wektor własny, gdyż jego elementy nie sumują się do wartości 1.",
+      "Dwie odpowiedzi są poprawne (Czyli a i b)."
+    ],
+    answer: [
+      "Dwie odpowiedzi są poprawne (Czyli a i b)."
+    ]
+  },
+  {
     question: "Klasteryzacja to:",
     options: [
       "Metoda statystyczna do analizy regresji.",
@@ -168,6 +180,18 @@ const questions = [
     ]
   },
   {
+    question: "W jaki sposób ensemble learning łączy prognozy z różnych modeli?",
+    options: [
+      "Poprzez wybór najczęściej występującej prognozy.",
+      "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli.",
+      "Poprzez zastosowanie regresji logistycznej do połączenia prognoz.",
+      "Poprzez zastosowanie metody najbliższych sąsiadów do połączenia prognoz."
+    ],
+    answer: [
+      "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli."
+    ]
+  },
+  {
     question: "Co to jest Bagging w kontekście ensemble learning?",
     options: [
       "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
@@ -178,8 +202,167 @@ const questions = [
     answer: [
       "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
     ]
+  },
+  {
+    question: "Które z poniższych metryk odległości jest stosowane w algorytmie DBSCAN?",
+    options: [
+      "Odległość euklidesowa.",
+      "Odległość Manhattan.",
+      "Odległość Czebyszewa.",
+      "Wszystkie powyższe."
+    ],
+    answer: [
+      "Wszystkie powyższe."
+    ]
+  },
+  {
+    question: "Które z poniższych technik można zastosować do wykrywania anomalii?",
+    options: [
+      "K-średnich (K-means).",
+      "Drzewa decyzyjne.",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Wykrywanie odstępstw od normy (Outlier Detection)."
+    ],
+    answer: [
+      "Wykrywanie odstępstw od normy (Outlier Detection)."
+    ]
+  },
+  {
+    question: "Które z poniższych technik redukcji wymiarów można zastosować przed wykonaniem klasteryzacji?",
+    options: [
+      "Analiza składowych głównych (PCA).",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Algorytm EM (Expectation-Maximization).",
+      "Regresja logistyczna."
+    ],
+    answer: [
+      "Analiza składowych głównych (PCA)."
+    ]
+  },
+  {
+    question: "Macierz kowariancji, obliczona ze znormalizowanego zbioru danych X, ma wymiar 50x50. Oznacza to, że:",
+    options: [
+      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
+      "Zbiór danych X składa się z 50 przykładów.",
+      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów.",
+      "Dwie odpowiedzi są poprawne."
+    ],
+    answer: [
+      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
+      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów."
+    ]
+  },
+  {
+    question: "Kolejne kroki algorytmu PCA są następujące:",
+    options: [
+      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
+      "Obliczenie macierzy kowariancji, standaryzacja danych w macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
+      "Standaryzacja danych, obliczenie wartości i wektorów własnych macierzy reprezentującej zbiór danych, pomnożenie zbioru danych przez wektory własne.",
+      "Obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, standaryzacja wektorów własnych, pomnożenie zbioru danych przez wektory własne."
+    ],
+    answer: [
+      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne."
+    ]
+  },
+  {
+    question: "Co oznacza pojęcie \"inercja\" w kontekście klasteryzacji?",
+    options: [
+      "Miara jakości klastra, reprezentująca separację między klastrami.",
+      "Suma kwadratów odległości między punktami a centroidami klastrów.",
+      "Technika normalizacji danych przed klasteryzacją.",
+      "Algorytm do przewidywania etykiet klas dla nowych danych."
+    ],
+    answer: [
+      "Suma kwadratów odległości między punktami a centroidami klastrów."
+    ]
+  },
+  {
+    question: "Jak można ocenić jakość wykrywania anomalii?",
+    options: [
+      "Przez porównanie z danymi treningowymi.",
+      "Przez obliczenie miary dokładności (Accuracy).",
+      "Przez analizę miary Precision i Recall.",
+      "Przez porównanie z zewnętrznymi etykietami anomalii."
+    ],
+    answer: [
+      "Przez analizę miary Precision i Recall.",
+      "Przez porównanie z zewnętrznymi etykietami anomalii."
+    ]
+  },
+  {
+    question: "Co to jest ensemble learning?",
+    options: [
+      "Technika redukcji wymiarów danych.",
+      "Metoda do trenowania wielu modeli i łączenia ich prognoz.",
+      "Algorytm do klasyfikacji danych tekstowych.",
+      "Metoda do generowania sztucznych danych treningowych."
+    ],
+    answer: [
+      "Metoda do trenowania wielu modeli i łączenia ich prognoz."
+    ]
+  },
+  {
+    question: "Które z poniższych algorytmów można zastosować do klasteryzacji danych o nieliniowej strukturze?",
+    options: [
+      "K-średnich (K-means).",
+      "Algorytm gęstościowy oparty na odległościach (DBSCAN).",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Metoda Warda w hierarchicznej klasteryzacji."
+    ],
+    answer: [
+      "Algorytm gęstościowy oparty na odległościach (DBSCAN)."
+    ]
+  },
+  {
+    question: "Co oznacza pojęcie \"silhouette score\" w kontekście oceny jakości klasteryzacji?",
+    options: [
+      "Miara gęstości klastrów.",
+      "Miara separacji między klastrami.",
+      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami.",
+      "Miara stabilności klastrów."
+    ],
+    answer: [
+      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami."
+    ]
+  },
+  {
+    question: "Co to jest boostraping w ensemble learning?",
+    options: [
+      "Technika redukcji wymiarów danych.",
+      "Metoda do generowania sztucznych danych treningowych.",
+      "Algorytm do klasyfikacji danych tekstowych.",
+      "Metoda do oceny jakości ensemble."
+    ],
+    answer: [
+      "Metoda do generowania sztucznych danych treningowych."
+    ]
+  },
+  {
+    question: "Co to jest boosting w ensemble learning?",
+    options: [
+      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
+      "Technika redukcji wymiarów danych.",
+      "Algorytm do klasyfikacji danych tekstowych.",
+      "Metoda do generowania sztucznych danych treningowych."
+    ],
+    answer: [
+      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
+    ]
+  },
+  {
+    question: "Jakie są główne wyzwania związane z interpretacją wyników klasteryzacji?",
+    options: [
+      "Trudność w określeniu optymalnej liczby klastrów.",
+      "Subiektywność w interpretacji granic klastrów.",
+      "Brak etykiet klas dla danych nieetykietowanych.",
+      "Wszystkie powyższe."
+    ],
+    answer: [
+      "Wszystkie powyższe."
+    ]
   }
 ];
+
 
 let shuffledQuestions = [];
 let currentQuestionIndex = 0;
