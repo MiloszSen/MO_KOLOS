@@ -121,683 +121,364 @@
 <script>
     const questions = [
     {
-            "question": "Które z podanych elementów nie mają bezpośredniego kontaktu z wielkością regulowaną?",
-            "options": [
-                "Czujnik pomiarowy",
-                "Przetwornik pomiarowy",
-                "Regulator",
-                "Element nastawczy (np. grzybek zaworu)"
-            ],
-            "answer": [
-                "Regulator",
-                "Przetwornik pomiarowy",
-                "Element nastawczy (np. grzybek zaworu)"
-            ]
-        },
+  "question": "Efektem zastosowania metody PCA na zbiorze danych jest:",
+  "options": [
+    "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu.",
+    "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
+    "Wizualizacja danych wielowymiarowych.",
+    "Przygotowanie danych do uczenia nadzorowanego."
+  ],
+  "answer": [
+    "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
+  ]
+},
         {
-            "question": "Które z podanych elementów ma bezpośredni kontakt z fizyczną wielkością regulowaną?",
-            "options": [
-                "Czujnik pomiarowy",
-                "Przetwornik pomiarowy",
-                "Regulator",
-                "Siłownik"
-            ],
-            "answer": [
-                "Czujnik pomiarowy"
-            ]
-        },
+  "question": "Znormalizowana wartość własna pierwszej składowej głównej wynosi 0.9. Oznacza to, że:",
+  "options": [
+    "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych.",
+    "Pierwsza cecha oryginalnego zbioru danych wyjaśnia 90% całkowitej wariancji zbioru danych.",
+    "Waga pierwszej cechy x1 wynosi 0.9 przy obliczaniu nowej cechy z1.",
+    "Szacowane prawdopodobieństwo zachowania skuteczności klasyfikatora uczonego tylko na pierwszej składowej z1 w porównaniu z klasyfikatorem uczonym na wszystkich cechach x1, ..., xn oryginalnego zbioru danych wynosi 90%."
+  ],
+  "answer": [
+    "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych."
+  ]
+},
         {
-            "question": "Jakie elementy znajdują się w systemie montażu czujnika ciśnienia gazu?",
-            "options": [
-                "zawór odcinający",
-                "terminator",
-                "przewody kompensacyjne",
-                "odwadniacz"
-            ],
-            "answer": [
-                "zawór odcinający",
-                "odwadniacz"
-            ]
-        },
+  "question": "Wektor własny pierwszej składowej ma postać w1 = [0.3, 0.4, 0.8, -0.4]. Oznacza to, że:",
+  "options": [
+    "Każdy przypadek w zbiorze danych opisują cztery cechy.",
+    "Pierwsza składowa główna jest liczona jako średnia ważona kolejnych cech zbioru i elementów tego wektora własnego, postaci: x1*0.3+x2*0.4+x3*0.8+x4*(-0.4).",
+    "Nie może istnieć taki wektor własny gdyż jego elementy nie sumują się do wartości 1.",
+    "Dwie odpowiedzi są poprawne (Czyli a i b)"
+  ],
+  "answer": [
+    "Dwie odpowiedzi są poprawne (Czyli a i b)"
+      ]
+}
+,
         {
-            "question": "Dla jakiego materiału można użyć przepływomierza indukcyjnego?",
-            "options": [
-                "płynna parafina",
-                "benzyna",
-                "kwas siarkowy",
-                "olej rzepakowy"
-            ],
-            "answer": [
-                "kwas siarkowy"
-            ]
-        },
+  "question": "Klasteryzacja to:",
+  "options": [
+    "Metoda statystyczna do analizy regresji.",
+    "Technika grupowania danych na podstawie podobieństwa.",
+    "Algorytm do klasyfikacji danych.",
+    "Metoda interpolacji wartości brakujących."
+  ],
+  "answer": [
+    "Technika grupowania danych na podstawie podobieństwa."
+  ]
+}
+,
         {
-            "question": "Jakiego czujnika temperatury należy użyć w procesie pasteryzacji (zakres do ok. 100 ℃)?",
-            "options": [
-                "termopara",
-                "Pt100",
-                "Ni100",
-                "Pirometr"
-            ],
-            "answer": [
-                "Pt100",
-                "Ni100"
-            ]
-        },
+  "question": "Która metryka odległości jest najczęściej używana w algorytmie k-średnich (K-means)?",
+  "options": [
+    "Odległość euklidesowa.",
+    "Odległość Manhattan.",
+    "Odległość Czebyszewa.",
+    "Wszystkie powyższe."
+  ],
+  "answer": [
+    "Odległość euklidesowa."
+  ]
+}
+,
         {
-            "question": "W układzie regulacji temperatury w piecu do wypalania ceramiki (zakres temperatur do około 1300 ℃) należy zastosować:",
-            "options": [
-                "Żaden z powyższych czujników się nie nadaje",
-                "Czujnik Ni100",
-                "Termoparę",
-                "Czujnik Pt100"
-            ],
-            "answer": [
-                "Termoparę"
-            ]
-        },
+  "question": "W jaki sposób ensemble learning łączy prognozy z różnych modeli?",
+  "options": [
+    "Poprzez wybór najczęściej występującej prognozy.",
+    "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli.",
+    "Poprzez zastosowanie regresji logistycznej do połączenia prognoz.",
+    "Poprzez zastosowanie metody najbliższych sąsiadów do połączenia prognoz."
+  ],
+  "answer": [
+    "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli."
+  ]
+}
+,
         {
-            "question": "Jakie wymagania musi spełniać sieć przemysłowa?",
-            "options": [
-                "determinizm czasowy",
-                "łatwość dołączania prostych urządzeń",
-                "zasilanie urządzeń wprost z magistrali",
-                "przesyłanie danych o zmiennej wielkości w różnych porach"
-            ],
-            "answer": [
-                "determinizm czasowy",
-                "łatwość dołączania prostych urządzeń",
-                "zasilanie urządzeń wprost z magistrali"
-            ]
-        },
+  "question": "Co to jest Bagging w kontekście ensemble learning?",
+  "options": [
+    "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
+    "Technika redukcji wymiarów danych.",
+    "Algorytm do klasyfikacji danych tekstowych.",
+    "Metoda do generowania sztucznych danych treningowych."
+  ],
+  "answer": [
+    "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
+  ]
+}
+,
         {
-            "question": "Które z przedstawionych urządzeń automatyzacji może pracować w środowisku silnie wybuchowym?",
-            "options": [
-                "Siłownik pneumatyczny",
-                "Profibus PA",
-                "Regulator pneumatyczny PID",
-                "Siłownik elektryczny w obudowie przewietrzanej"
-            ],
-            "answer": [
-            "Siłownik pneumatyczny",
-            "Profibus PA",
-            "Regulator pneumatyczny PID",    
-            "Siłownik elektryczny w obudowie przewietrzanej"
-            ]
-        },
-        {
-            "question": "Co może znacząco wydłużyć czas cyklu sterownika PLC?",
-            "options": [
-                "Wyznaczanie wartości funkcji trygonometrycznych",
-                "Obliczenia i porównania na liczbach zmiennoprzecinkowych (REAL)",
-                "Obliczenia na liczbach całkowitych (INT)",
-                "Obliczenia na zmiennych typu BOOL"
-            ],
-            "answer": [
-                "Wyznaczanie wartości funkcji trygonometrycznych",
-                "Obliczenia i porównania na liczbach zmiennoprzecinkowych (REAL)"
-            ]
-        },
-        {
-            "question": "Które z podanych poniżej czynników nie wydłużają znacząco czasu cyklu i/lub czasu odpowiedzi sterownika PLC?",
-            "options": [
-                "Operacje logiczne na bitach",
-                "Obliczanie funkcji trygonometrycznych",
-                "Operacje na danych całkowitych (typu INT, DINT)",
-                "Operacje obliczeniowe i porównania wykonywane na danych typu REAL"
-            ],
-            "answer": [
-                "Operacje logiczne na bitach",
-                "Operacje na danych całkowitych (typu INT, DINT)"
-            ]
-        },
-        {
-            "question": "Regulator bezpośredniego działania",
-            "options": [
-                "Regulator proporcjonalny",
-                "PID",
-                "II-położeniowy",
-                "Specjalistyczny"
-            ],
-            "answer": [
-                "II-położeniowy",    
-                "Regulator proporcjonalny"
-            ]
-        },
-        {
-            "question": "Regulator bezpośredniego działania",
-            "options": [
-                "Umożliwia realizację sterowania dwupołożeniowego",
-                "Umożliwia realizację sterowania proporcjonalnego (typu P)",
-                "Posiada port komunikacyjny",
-                "Wymaga dodatkowego zasilania"
-            ],
-            "answer": [
-                "Umożliwia realizację sterowania dwupołożeniowego",    
-                "Umożliwia realizację sterowania proporcjonalnego (typu P)"
-            ]
-        },
-        {
-            "question": "Co wchodzi w skład sterownika PLC?",
-            "options": [
-                "napęd CD",
-                "wentylator chłodzący zasilacz",
-                "Karta SD/SDHC",
-                "Przekaźnik SSR"
-            ],
-            "answer": [
-                "Karta SD/SDHC"
-            ]
-        },
-        {
-            "question": "Typy urządzeń w sieci Profinet?",
-            "options": [
-                "IO Controller",
-                "IO Device",
-                "IO Server",
-                "żadne z powyższych"
-            ],
-            "answer": [
-                "IO Controller",
-                "IO Device"
-            ]
-        },
-        {
-            "question": "Warstwy sieci dla HART wg modelu OSI",
-            "options": [
-                "sieciowa",
-                "fizyczna",
-                "aplikacyjna",
-                "sesji"
-            ],
-            "answer": [
-                "fizyczna",
-                "aplikacyjna"
-            ]
-        },
-        {
-            "question": "Co oznacza %IW4?",
-            "options": [
-                "wejście analogowe",
-                "wejście binarne",
-                "wyjście analogowe",
-                "komórka wewnętrzna pamięci"
-            ],
-            "answer": [
-                "wejście analogowe"
-            ]
-        },
-        {
-            "question": "W jakich sytuacjach stosujemy przetwornik międzysystemowy?",
-            "options": [
-                "znormalizowany sygnał prądowy na znormalizowane napięcie",
-                "znormalizowany sygnał prądowy na znormalizowany sygnał pneumatyczny",
-                "w celu kompensacji zakłóceń czy coś",
-                "w celu wzmocnienia sygnału"
-            ],
-            "answer": [
-                "znormalizowany sygnał prądowy na znormalizowane napięcie",
-                "znormalizowany sygnał prądowy na znormalizowany sygnał pneumatyczny"
-            ]
-        },
-        {
-            "question": "Regulator PID w S7 1200, jakich elementów należy użyć do jego skonfigurowania?",
-            "options": [
-                "Blok cykliczny OB30",
-                "Blok danych DB",
-                "Instancja bloku funkcyjnego FB",
-                "Podprogram"
-            ],
-            "answer": [
-                "Blok cykliczny OB30",
-                "Blok danych DB",
-                "Instancja bloku funkcyjnego FB"
-            ]
-        },
-        {
-            "question": "Jakie elementów należy użyć przy konfiguracji Grafu Sekwencji SFC",
-            "options": [
-                "Etap",
-                "Przejście",
-                "Działanie",
-                "Język LD"
-            ],
-            "answer": [
-                "Etap",
-                "Przejście",
-                "Działanie"
-            ]
-        },
-        {
-            "question": "Które z poniższych elementów automatyki mogą być zlokalizowane wewnątrz tunelu akceleratora (np. w CERN) w bezpośrednim sąsiedztwie rozpędzanych cząstek?",
-            "options": [
-                "Siłownik pneumatyczny",
-                "Kabel sieciowy typu „skrętka”",
-                "Pneumatyczny regulator PID",
-                "Sterownik PID"
-            ],
-            "answer": [
-                "Siłownik pneumatyczny",
-                "Pneumatyczny regulator PID"
-            ]
-        },
-        {
-            "question": "W którym z poniższych zakładów produkcyjnych należy zastosować iskrobezpieczne elementy automatyki?",
-            "options": [
-                "Kopalnia węgla kamiennego",
-                "Tartak",
-                "Stacja uzdatniania wody",
-                "Zakład ceramiki budowlanej"
-            ],
-            "answer": [
-                "Kopalnia węgla kamiennego",
-                "Tartak"
-            ]
-        },
-        {
-            "question": "Sterownik PLC w sieci PROFINET IO to:",
-            "options": [
-                "IO Controller",
-                "IO Device",
-                "IO Server",
-                "IO Supervisor"
-            ],
-            "answer": [
-                "IO Controller"
-            ]
-        },
-        {
-            "question": "Dostrajanie regulatora PID metodą cyklu granicznego",
-            "options": [
-                "Wymaga wyznaczenia czasu martwego i stałej czasowej obiektu",
-                "Wymaga wyznaczenia wzmocnienia krytycznego obiektu i okresu oscylacji nietłumionych na wyjściu układu",
-                "Wymaga znajomości wzmocnienia statycznego obiektu",
-                "Odbywa się w układzie zamkniętym"
-            ],
-            "answer": [
-                "Odbywa się w układzie zamkniętym",
-                "Wymaga wyznaczenia wzmocnienia krytycznego obiektu i okresu oscylacji nietłumionych na wyjściu układu"
-            ]
-        },
-        {
-            "question": "Podać zalety sterowania bazującego na komputerze PC w przemyśle:",
-            "options": [
-                "Niezależność od platformy sprzętowej",
-                "Duża szybkość działania",
-                "Znormalizowane metody działania",
-                "Wysoka niezawodność działania"
-            ],
-            "answer": [
-                "Niezależność od platformy sprzętowej",
-                "Duża szybkość działania"
-            ]
-        },
-        {
-            "question": "Które z poniższych cech opisują siłownik pneumatyczny:",
-            "options": [
-                "Przeciążalność organu ruchomego bez ryzyka uszkodzenia",
-                "Pełne iskrobezpieczeństwo",
-                "Łatwa realizacja pomocniczego sterowania ręcznego",
-                "W przypadku zaniku zasilania organ ruchomy pozostaje w ostatnim położeniu"
-            ],
-            "answer": [
-                "Przeciążalność organu ruchomego bez ryzyka uszkodzenia",
-                "Pełne iskrobezpieczeństwo"
-            ]
-        },
-        {
-            "question": "W których z wymienionych poniżej sytuacji należy zastosować przetwornik międzysystemowy w systemie automatyki?",
-            "options": [
-                "Wyjście z przetwornika pomiarowego ma zakres 0-5[mA], wejście wielkości regulowanej na regulator ma zakres 4-20[mA]",
-                "Wyjście z regulator ma zakres 4-20[mA] a wejście na siłownik ma zakres 20-100[kPa]",
-                "Wyjście z przetwornika pomiarowego ma zakres 4-20[mA] wejście wielkości regulowanej na regulator ma zakres 4-20[mA]",
-                "Przetwornik pomiarowy oraz jednostka centralna regulatora są połączone z użyciem sieci PROFIBUS DP"
-            ],
-            "answer": [
-                "Wyjście z przetwornika pomiarowego ma zakres 0-5[mA], wejście wielkości regulowanej na regulator ma zakres 4-20[mA]",
-                "Wyjście z regulator ma zakres 4-20[mA] a wejście na siłownik ma zakres 20-100[kPa]"
-            ]
-        },
-        {
-            "question": "Zawory rozdzielające są elementem układu sterowania:",
-            "options": [
-                "Siłownika elektrycznego",
-                "Siłownika hydraulicznego tłokowego",
-                "Siłownika pneumatycznego tłokowego",
-                "Żadnego z powyższych"
-            ],
-            "answer": [
-                "Siłownika hydraulicznego tłokowego",
-                "Siłownika pneumatycznego tłokowego"
-            ]
-        },
-        {
-            "question": "Czujnik ciśnienia przeznaczony do pomiaru ciśnienia gazu powinien być zamontowany:",
-            "options": [
-                "Nad rurą lub zbiornikiem",
-                "Pod rurą lub zbiornikiem",
-                "Na poziomie środka rury lub zbiornika",
-                "Nie ma znaczenia"
-            ],
-            "answer": [
-                "Nad rurą lub zbiornikiem"
-            ]
-        },
-        {
-            "question": "Która z podanych poniżej sieci wymaga stosowania terminatorów?",
-            "options": [
-                "Pierścieniowa",
-                "Magistralowa",
-                "Gwieździsta",
-                "Siatkowa"
-            ],
-            "answer": [
-                "Magistralowa"
-            ]
-        },
-        {
-            "question": "W przypadku, którego z podanych poniżej obiektów/instalacji technologicznych należy stosować aparaturę automatyki w wykonaniu iskrobezpiecznym?",
-            "options": [
-                "Stacja redukcyjno-pomiarowa gazu ziemnego",
-                "Linia produkcyjna nitrogliceryny",
-                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
-                "Młyn zbożowy"
-            ],
-            "answer": [
-                "Stacja redukcyjno-pomiarowa gazu ziemnego",
-                "Linia produkcyjna nitrogliceryny",
-                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
-                "Młyn zbożowy"
-            ]
-        },
-        {
-            "question": "Maksymalnego obciążenie rezystancyjne w pętli prądowej 4-20mA obwodu wyjściowego przetwornika jest równe:",
-            "options": [
-                "1000 ohma",
-                "500 ohma",
-                "750 ohma",
-                "100 ohma"
-            ],
-            "answer": [
-                "500 ohma"
-            ]
-        },
-        {
-            "question": "Które z podanych poniżej wymagań musi spełnić sieć przemysłowa?",
-            "options": [
-                "Determinizm czasowy podczas działania",
-                "Łatwe dołączanie prostych urządzeń",
-                "Możliwość przesyłania dużych ilości danych o zmiennym i nieprzewidywalnym natężeniu",
-                "Możliwość zasilania urządzeń z magistrali"
-            ],
-            "answer": [
-                "Determinizm czasowy podczas działania",
-                "Łatwe dołączanie prostych urządzeń",
-                "Możliwość zasilania urządzeń z magistrali"
-            ]
-        },
-        {
-            "question": "Która z podanych poniżej warstw 7 warstwowego modelu OSI jest stosowana w sieci PROFIBUS?",
-            "options": [
-                "Warstwa fizyczna",
-                "Warstwa sieciowa",
-                "Warstwa sesji",
-                "Warstwa łącza danych (liniowa)"
-            ],
-            "answer": [
-                "Warstwa fizyczna",
-                "Warstwa łącza danych (liniowa)"
-            ]
-        },
-        {
-            "question": "W układzie sterowania i nadzoru młyna kołowego stosowane są czujniki:",
-            "options": [
-                "Ciśnienia",
-                "Temperatury",
-                "Natężenia przepływu",
-                "Poziomu materiału"
-            ],
-            "answer": [
-                "Ciśnienia",
-                "Temperatury",
-                "Natężenia przepływu"
-            ]
-        },
-        {
-            "question": "Dany jest czujnik temperatur o oznaczeniu Pt500 jest to czujnik:",
-            "options": [
-                "Platynowy o rezystancji 500Ω w temperaturze 100⁰C",
-                "Platynowy o rezystancji 500Ω w temperaturze 0⁰C",
-                "Platynowy o rezystancji 100Ω w temperaturze 500⁰C",
-                "Platynowy o rezystancji 500Ω w temperaturze 25⁰C"
-            ],
-            "answer": [
-                "Platynowy o rezystancji 500Ω w temperaturze 0⁰C"
-            ]
-        },
-        {
-            "question": "Natężenie przepływu których z wymienionych cieczy może być mierzone z użyciem przepływomierza indukcyjnego?",
-            "options": [
-                "Sok pomarańczowy",
-                "Olej rzepakowy",
-                "Kwas siarkowy",
-                "Benzyna"
-            ],
-            "answer": [
-                "Sok pomarańczowy",
-                "Kwas siarkowy"
-            ]
-        },
-        {
-            "question": "Która z podanych poniżej warstw 7 warstwowego modelu OSI jest stosowana w sieci HART?",
-            "options": [
-                "Warstwa fizyczna",
-                "Aplikacyjna",
-                "Warstwa sesji",
-                "Warstwa łącza danych (liniowa)"
-            ],
-            "answer": [
-                "Warstwa fizyczna",
-                "Aplikacyjna",
-                "Warstwa łącza danych (liniowa)"
-            ]
-        },
-        {
-            "question": "W przypadku sterowania silnika elektrycznego przez sterownik PLC należy zastosować jeden z następujących elementów wykonawczych:",
-            "options": [
-                "Stycznik",
-                "Przekaźnik",
-                "Potencjometr",
-                "Falownik"
-            ],
-            "answer": [
-                "Falownik"
-            ]
-        },
-        {
-            "question": "Podczas dostrajania regulatora PID do procesu metodą Astroma-Hagglunda stosowany jest regulator:",
-            "options": [
-                "Proporcjonalny (typ P)",
-                "Dwupołożeniowy",
-                "Trójpołożeniowy z histerezą",
-                "Trójpołożeniowy bez histerezy"
-            ],
-            "answer": [
-                "Dwupołożeniowy"
-            ]
-        },
-        {
-            "question": "Które z wymienionych poniżej elementów nie są częścią składową sterownika PLC?",
-            "options": [
-                "Pamięć RAM",
-                "Pamięć dyskowa",
-                "Wentylator chłodzący zasilacz",
-                "Układ wejść binarnych"
-            ],
-            "answer": [
-                "Pamięć dyskowa",
-                "Wentylator chłodzący zasilacz"
-            ]
-        },
-        {
-            "question": "W układzie sterowania instalacją kriogeniki dla akceleratora są stosowane czujniki:",
-            "options": [
-                "Poziomu",
-                "Temperatury",
-                "Ciśnienia",
-                "Żadne z wyżej wymienionych"
-            ],
-            "answer": [
-                "Poziomu",
-                "Temperatury",
-                "Ciśnienia"
-            ]
-        },
-        {
-            "question": "W przypadku, którego z podanych poniżej obiektów/instalacji technologicznych należy stosować aparaturę automatyki w wykonaniu iskrobezpiecznym?",
-            "options": [
-                "Stacja redukcyjno-pomiarowa gazu ziemnego",
-                "tartak",
-                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
-                "Młyn zbożowy"
-            ],
-            "answer": [
-                "Stacja redukcyjno-pomiarowa gazu ziemnego",
-                "tartak",
-                "Instalacja automatyki kombajnu górniczego pracującego w „metanowej” kopalni węgla kamiennego",
-                "Młyn zbożowy"
-            ]
-        },
-        {
-            "question": "W przypadku sterowania grzałki elektrycznej o mocy 300W zasilanej napięciem 230V AC przez sterownik PLC należy zastosować jeden z następujących elementów wykonawczych:",
-            "options": [
-                "Stycznik",
-                "Przekaźnik",
-                "Potencjometr",
-                "Siłownik pneumatyczny"
-            ],
-            "answer": [
-                "Przekaźnik"
-            ]
-        },
-        {
-            "question": "W systemie sterowania i nadzoru kombajnu górniczego KSW1140E są stosowane sieci przemysłowe:",
-            "options": [
-                "CAN",
-                "PROFIBUS",
-                "MODBUS",
-                "HART"
-            ],
-            "answer": [
-                "CAN",
-                "PROFIBUS",
-                "MODBUS",
-            ]
-        },
-        {
-            "question": "Które z poniższych cech opisują siłownik elektryczny:",
-            "options": [
-                "Łatwa realizacja pomocniczego sterowania ręcznego",
-                "Pełne iskrobezpieczeństwo",
-                "W przypadku zaniku zasilania organ ruchomy pozostaje w ostatnim położeniu",
-                "Przeciążalność organu ruchomego bez ryzyka uszkodzenia"
-            ],
-            "answer": [
-                "Łatwa realizacja pomocniczego sterowania ręcznego",
-                "W przypadku zaniku zasilania organ ruchomy pozostaje w ostatnim położeniu"
-            ]
-        },
-        {
-            "question": "Z wykorzystaniem przepływomierza indukcyjnego może być mierzone natężenie przepływu:",
-            "options": [
-                "Oleju napędowego",
-                "Oleju roślinnego",
-                "Benzyny",
-                "Żadnej z powyższych"
-            ],
-            "answer": [
-                "Żadnej z powyższych"
-            ]
-        },
-        {
-            "question": "Zaznaczyć czynniki zakłócające pomiar wagą tensometryczną:",
-            "options": [
-                "Zmienna temperatura otoczenia",
-                "Żaden z wymienionych czynników nie ma wpływu na dokładność ważenia",
-                "Wilgotność otoczenia",
-                "Starzenie się czujnika"
-            ],
-            "answer": [
-                "Zmienna temperatura otoczenia",
-                "Starzenie się czujnika"
-            ]
-        },
-        {
-            "question": "System montażowy czujnika ciśnienia cieczy zawiera następujące elementy:",
-            "options": [
-                "Przewody kompensacyjne",
-                "Odpowietrznik",
-                "Zawór odcinający",
-                "Terminator"
-            ],
-            "answer": [
-                "Odpowietrznik",
-                "Zawór odcinający"
-            ]
-        },
-        {
-    "question": "Dostrajanie regulatora PID na podstawie transmitancji zastępczej:",
+  "question": "Które z poniższych metryk odległości jest stosowane w algorytmie DBSCAN?",
+  "options": [
+    "Odległość euklidesowa.",
+    "Odległość Manhattan.",
+    "Odległość Czebyszewa.",
+    "Wszystkie powyższe."
+  ],
+  "answer": [
+    "Wszystkie powyższe."
+  ]
+}
+,
+        [
+  {
+    "question": "Które z poniższych technik można zastosować do wykrywania anomalii?",
     "options": [
-      "wymaga wyznaczenia czasu martwego i stałej czasowej obiektu",
-      "wymaga wyznaczenia wzmocnienia krytycznego obiektu i okresu oscylacji nietłumionych na wyjściu układu",
-      "odbywa się w układzie zamkniętym",
-      "pozwala na wyznaczenie nastaw optymalnych w sensie określonych funkcji kosztu"
+      "K-średnich (K-means).",
+      "Drzewa decyzyjne.",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Wykrywanie odstępstw od normy (Outlier Detection)."
     ],
     "answer": [
-      "wymaga wyznaczenia czasu martwego i stałej czasowej obiektu",
-      "pozwala na wyznaczenie nastaw optymalnych w sensie określonych funkcji kosztu"
+      "Wykrywanie odstępstw od normy (Outlier Detection)."
     ]
   },
   {
-    "question": "Silnik krokowy jako element urządzenia wykonawczego:",
+    "question": "Które z poniższych technik redukcji wymiarów można zastosować przed wykonaniem klasteryzacji?",
     "options": [
-      "jest sterowany w układzie otwartym",
-      "może być sterowany sygnałem PWM",
-      "ma dużą szybkość działania i możliwość szybkiej zmiany kierunku ruchu",
-      "może być stosowany tam, gdzie jest wymagana duża moc"
+      "Analiza składowych głównych (PCA).",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Algorytm EM (Expectation-Maximization).",
+      "Regresja logistyczna."
     ],
     "answer": [
-      "jest sterowany w układzie otwartym",
-      "ma dużą szybkość działania i możliwość szybkiej zmiany kierunku ruchu"
+      "Analiza składowych głównych (PCA)."
     ]
   },
   {
-    "question": "W którym z wymienionych zakładów produkcyjnych należy zastosować iskrobezpieczne elementy automatyki?",
+    "question": "Macierz kowariancji, obliczona ze znormalizowanego zbioru danych X, ma wymiar 50x50. Oznacza to, że:",
     "options": [
-      "tartak",
-      "kopalnia węgla kamiennego",
-      "lakiernia",
-      "cementownia"
+      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
+      "Zbiór danych X składa się z 50 przykładów.",
+      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów.",
+      "Dwie odpowiedzi są poprawne"
     ],
     "answer": [
-      "tartak",
-      "kopalnia węgla kamiennego",
-      "cementownia"
+      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
+      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów."
     ]
   },
   {
-    "question": "Który z elementów systemu automatyki ma bezpośredni kontakt z fizycznym sygnałem sterującym?",
+    "question": "Kolejne kroki algorytmu PCA są następujące:",
     "options": [
-      "sieć łącząca poszczególne elementy",
-      "element nastawczy (np. grzybek zaworu)",
-      "regulator",
-      "czujnik pomiarowy"
+      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
+      "Obliczenie macierzy kowariancji, standaryzacja danych w macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
+      "Standaryzacja danych, obliczenie wartości i wektorów własnych macierzy reprezentującej zbiór danych, pomnożenie zbioru danych przez wektory własne.",
+      "Obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, standaryzacja wektorów własnych, pomnożenie zbioru danych przez wektory własne."
     ],
     "answer": [
-      "element nastawczy (np. grzybek zaworu)",
+      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne."
+    ]
+  },
+  {
+    "question": "Efektem zastosowania metody PCA na zbiorze danych jest:",
+    "options": [
+      "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
+      "Wizualizacja danych wielowymiarowych.",
+      "Przygotowanie danych do uczenia nadzorowanego.",
+      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
+    ],
+    "answer": [
+      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
+    ]
+  },
+  {
+    "question": "Co oznacza pojęcie \"inercja\" w kontekście klasteryzacji?",
+    "options": [
+      "Miara jakości klastra, reprezentująca separację między klastrami.",
+      "Suma kwadratów odległości między punktami a centroidami klastrów.",
+      "Technika normalizacji danych przed klasteryzacją.",
+      "Algorytm do przewidywania etykiet klas dla nowych danych."
+    ],
+    "answer": [
+      "Suma kwadratów odległości między punktami a centroidami klastrów."
+    ]
+  },
+  {
+    "question": "Jak można ocenić jakość wykrywania anomalii?",
+    "options": [
+      "Przez porównanie z danymi treningowymi.",
+      "Przez obliczenie miary dokładności (Accuracy).",
+      "Przez analizę miary Precision i Recall.",
+      "Przez porównanie z zewnętrznymi etykietami anomalii."
+    ],
+    "answer": [
+      "Przez analizę miary Precision i Recall.",
+      "Przez porównanie z zewnętrznymi etykietami anomalii."
+    ]
+  },
+  {
+    "question": "Co to jest ensemble learning?",
+    "options": [
+      "Technika redukcji wymiarów danych.",
+      "Metoda do trenowania wielu modeli i łączenia ich prognoz.",
+      "Algorytm do klasyfikacji danych tekstowych.",
+      "Metoda do generowania sztucznych danych treningowych."
+    ],
+    "answer": [
+      "Metoda do trenowania wielu modeli i łączenia ich prognoz."
+    ]
+  },
+  {
+    "question": "Które z poniższych algorytmów można zastosować do klasteryzacji danych o nieliniowej strukturze?",
+    "options": [
+      "K-średnich (K-means).",
+      "Algorytm gęstościowy oparty na odległościach (DBSCAN).",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Metoda Warda w hierarchicznej klasteryzacji."
+    ],
+    "answer": [
+      "Algorytm gęstościowy oparty na odległościach (DBSCAN)."
+    ]
+  },
+  {
+    "question": "Co oznacza pojęcie \"silhouette score\" w kontekście oceny jakości klasteryzacji?",
+    "options": [
+      "Miara gęstości klastrów.",
+      "Miara separacji między klastrami.",
+      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami.",
+      "Miara stabilności klastrów."
+    ],
+    "answer": [
+      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami."
+    ]
+  },
+  {
+    "question": "Klasteryzacja to:",
+    "options": [
+      "Metoda statystyczna do analizy regresji.",
+      "Technika grupowania danych na podstawie podobieństwa.",
+      "Algorytm do klasyfikacji danych.",
+      "Metoda interpolacji wartości brakujących."
+    ],
+    "answer": [
+      "Technika grupowania danych na podstawie podobieństwa."
+    ]
+  },[
+  {
+    "question": "Która metryka odległości jest najczęściej używana w algorytmie k-średnich (K-means)?",
+    "options": [
+      "Odległość euklidesowa.",
+      "Odległość Manhattan.",
+      "Odległość Czebyszewa.",
+      "Wszystkie powyższe."
+    ],
+    "answer": [
+      "Odległość euklidesowa."
+    ]
+  },
+  {
+    "question": "Efektem zastosowania metody PCA na zbiorze danych jest:",
+    "options": [
+      "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
+      "Wizualizacja danych wielowymiarowych.",
+      "Przygotowanie danych do uczenia nadzorowanego.",
+      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
+    ],
+    "answer": [
+      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
+    ]
+  },
+  {
+    "question": "Macierz kowariancji, obliczona ze znormalizowanego zbioru danych X, ma wymiar 4x4. Oznacza to, że:",
+    "options": [
+      "Każdy przypadek w zbiorze danych X opisywany jest przez 35 cech.",
+      "Zbiór danych X składa się z 35 przykładów.",
+      "Dla tej macierzy kowariancji istnieje 16 wartości własnych.",
+      "Dwie odpowiedzi są poprawne"
+    ],
+    "answer": [
+      "Zbiór danych X składa się z 35 przykładów."
+    ]
+  },
+  {
+    "question": "Wektor własny pierwszej składowej ma postać w1 = [0.3, 0.4, 0.8, -0.4]. Oznacza to, że:",
+    "options": [
+      "Każdy przypadek w zbiorze danych opisują cztery cechy.",
+      "Zbiór składa się z 4 przykładów.",
+      "Nie może istnieć taki wektor własny gdyż wektory własne nie posiadają wartości ujemnych.",
+      "Nie może istnieć taki wektor własny gdyż jego elementy nie sumują się do wartości 1."
+    ],
+    "answer": [
+      "Każdy przypadek w zbiorze danych opisują cztery cechy."
+    ]
+  },
+  {
+    "question": "Które z poniższych technik można zastosować do wykrywania anomalii?",
+    "options": [
+      "K-średnich (K-means).",
+      "Drzewa decyzyjne.",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Wykrywanie odstępstw od normy (Outlier Detection)."
+    ],
+    "answer": [
+      "Wykrywanie odstępstw od normy (Outlier Detection)."
+    ]
+  },
+  {
+    "question": "Co to jest boostraping w ensemble learning?",
+    "options": [
+      "Technika redukcji wymiarów danych.",
+      "Metoda do generowania sztucznych danych treningowych.",
+      "Algorytm do klasyfikacji danych tekstowych.",
+      "Metoda do oceny jakości ensemble."
+    ],
+    "answer": [
+      "Metoda do generowania sztucznych danych treningowych."
+    ]
+  },
+  {
+    "question": "Co to jest boosting w ensemble learning?",
+    "options": [
+      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
+      "Technika redukcji wymiarów danych.",
+      "Algorytm do klasyfikacji danych tekstowych.",
+      "Metoda do generowania sztucznych danych treningowych."
+    ],
+    "answer": [
+      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
+    ]
+  },
+  {
+    "question": "Które z poniższych technik redukcji wymiarów można zastosować przed wykonaniem klasteryzacji?",
+    "options": [
+      "Analiza składowych głównych (PCA).",
+      "Metoda najbliższych sąsiadów (k-NN).",
+      "Algorytm EM (Expectation-Maximization).",
+      "Regresja logistyczna."
+    ],
+    "answer": [
+      "Analiza składowych głównych (PCA)."
+    ]
+  },
+  {
+    "question": "Jakie są główne wyzwania związane z interpretacją wyników klasteryzacji?",
+    "options": [
+      "Trudność w określeniu optymalnej liczby klastrów.",
+      "Subiektywność w interpretacji granic klastrów.",
+      "Brak etykiet klas dla danych nieetykietowanych.",
+      "Wszystkie powyższe."
+    ],
+    "answer": [
+      "Wszystkie powyższe."
+    ]
+  },
+  {
+    "question": "Klasteryzacja to:",
+    "options": [
+      "Metoda statystyczna do analizy regresji.",
+      "Technika grupowania danych na podstawie podobieństwa.",
+      "Algorytm do klasyfikacji danych.",
+      "Metoda interpolacji wartości brakujących."
+    ],
+    "answer": [
+      "Technika grupowania danych na podstawie podobieństwa."
     ]
   }
-    ];
+]
+;
 
     let shuffledQuestions = [];
     let currentQuestionIndex = 0;
