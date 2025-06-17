@@ -1,612 +1,291 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAAAAAAAA</title>
-    <style>
-        /* Nowoczesny styl dla quizu */
-        body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #1c1c1c;
-            color: #e0e0e0;
-        }
-        .quiz-container {
-            width: 90%;
-            max-width: 600px;
-            background-color: #2c2c2c;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #4db8ff ;
-        }
-        .question {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .options button {
-            width: 80%;
-            margin: 8px 0;
-            padding: 12px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 6px;
-            background-color: #3c3c3c;
-            color: #e0e0e0;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .options button:hover {
-            background-color: #5c5c5c;
-            transform: scale(1.02);
-        }
-        .options button.selected {
-            background-color: #4db8ff;
-            color: #fff;
-        }
-        .result {
-            font-size: 24px;
-            margin-top: 20px;
-            color: #4db8ff;
-        }
-        .mistakes {
-            max-height: 400px; 
-            overflow-y: auto;
-            font-size: 18px;
-            margin-top: 20px;
-            color: #e74c3c;
-            text-align: left;
-            padding-right: 20px;
-        }
-        .mistakes::-webkit-scrollbar {
-            width: 12px;
-        }
-        .mistakes::-webkit-scrollbar-track {
-            background: #3c3c3c; 
-            border-radius: 10px;
-        }
-        .mistakes::-webkit-scrollbar-thumb {
-            background: #4db8ff; 
-            border-radius: 10px;
-        }
-        .mistakes::-webkit-scrollbar-thumb:hover {
-            background: #3498db; 
-        }
-        .menu-button {
-            margin-top: 30px;
-            padding: 12px 24px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 6px;
-            background-color: #4db8ff;
-            color: #fff;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .menu-button:hover {
-            background-color: #3498db;
-            transform: scale(1.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1c1c1c;
+      color: #e0e0e0;
+    }
+    .quiz-container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #2c2c2c;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #4db8ff;
+    }
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .options button {
+      width: 80%;
+      margin: 8px 0;
+      padding: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #3c3c3c;
+      color: #e0e0e0;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .options button:hover {
+      background-color: #5c5c5c;
+      transform: scale(1.02);
+    }
+    .options button.selected {
+      background-color: #4db8ff;
+      color: #fff;
+    }
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #4db8ff;
+    }
+    .mistakes {
+      max-height: 400px;
+      overflow-y: auto;
+      font-size: 18px;
+      margin-top: 20px;
+      color: #e74c3c;
+      text-align: left;
+      padding-right: 20px;
+    }
+    .mistakes::-webkit-scrollbar {
+      width: 12px;
+    }
+    .mistakes::-webkit-scrollbar-track {
+      background: #3c3c3c;
+      border-radius: 10px;
+    }
+    .mistakes::-webkit-scrollbar-thumb {
+      background: #4db8ff;
+      border-radius: 10px;
+    }
+    .mistakes::-webkit-scrollbar-thumb:hover {
+      background: #3498db;
+    }
+    .menu-button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #4db8ff;
+      color: #fff;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .menu-button:hover {
+      background-color: #3498db;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
 
 <div class="quiz-container">
-    <h1>AAAAAAAAAAAAAAA</h1>
-    <div id="question-container">
-        <div class="question" id="question">Pytanie pojawi się tutaj</div>
-        <div class="options">
-            <button onclick="selectAnswer(0)">Odpowiedź 1</button>
-            <button onclick="selectAnswer(1)">Odpowiedź 2</button>
-            <button onclick="selectAnswer(2)">Odpowiedź 3</button>
-            <button onclick="selectAnswer(3)">Odpowiedź 4</button>
-        </div>
-        <button class="menu-button" id="submit-button" onclick="checkAnswer()">Zatwierdź</button>
+  <h1>Quiz z metod obliczeniowych</h1>
+  <div id="question-container">
+    <div class="question" id="question">Pytanie pojawi się tutaj</div>
+    <div class="options">
+      <button onclick="selectAnswer(0)">Odpowiedź 1</button>
+      <button onclick="selectAnswer(1)">Odpowiedź 2</button>
+      <button onclick="selectAnswer(2)">Odpowiedź 3</button>
+      <button onclick="selectAnswer(3)">Odpowiedź 4</button>
     </div>
-    <div id="result" class="result"></div>
-    <div id="mistakes" class="mistakes"></div>
-    <button class="menu-button" onclick="returnToMenu()">Wróć do menu</button>
+    <button class="menu-button" id="submit-button" onclick="checkAnswer()">Zatwierdź</button>
+  </div>
+  <div id="result" class="result"></div>
+  <div id="mistakes" class="mistakes"></div>
+  <button class="menu-button" onclick="returnToMenu()">Wróć do menu</button>
 </div>
 
 <script>
-    const questions = [
-    {
-  "question": "Efektem zastosowania metody PCA na zbiorze danych jest:",
-  "options": [
-    "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu.",
-    "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
-    "Wizualizacja danych wielowymiarowych.",
-    "Przygotowanie danych do uczenia nadzorowanego."
-  ],
-  "answer": [
-    "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
-  ]
-},
-        {
-  "question": "Znormalizowana wartość własna pierwszej składowej głównej wynosi 0.9. Oznacza to, że:",
-  "options": [
-    "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych.",
-    "Pierwsza cecha oryginalnego zbioru danych wyjaśnia 90% całkowitej wariancji zbioru danych.",
-    "Waga pierwszej cechy x1 wynosi 0.9 przy obliczaniu nowej cechy z1.",
-    "Szacowane prawdopodobieństwo zachowania skuteczności klasyfikatora uczonego tylko na pierwszej składowej z1 w porównaniu z klasyfikatorem uczonym na wszystkich cechach x1, ..., xn oryginalnego zbioru danych wynosi 90%."
-  ],
-  "answer": [
-    "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych."
-  ]
-},
-        {
-  "question": "Wektor własny pierwszej składowej ma postać w1 = [0.3, 0.4, 0.8, -0.4]. Oznacza to, że:",
-  "options": [
-    "Każdy przypadek w zbiorze danych opisują cztery cechy.",
-    "Pierwsza składowa główna jest liczona jako średnia ważona kolejnych cech zbioru i elementów tego wektora własnego, postaci: x1*0.3+x2*0.4+x3*0.8+x4*(-0.4).",
-    "Nie może istnieć taki wektor własny gdyż jego elementy nie sumują się do wartości 1.",
-    "Dwie odpowiedzi są poprawne (Czyli a i b)"
-  ],
-  "answer": [
-    "Dwie odpowiedzi są poprawne (Czyli a i b)"
-      ]
-}
-,
-        {
-  "question": "Klasteryzacja to:",
-  "options": [
-    "Metoda statystyczna do analizy regresji.",
-    "Technika grupowania danych na podstawie podobieństwa.",
-    "Algorytm do klasyfikacji danych.",
-    "Metoda interpolacji wartości brakujących."
-  ],
-  "answer": [
-    "Technika grupowania danych na podstawie podobieństwa."
-  ]
-}
-,
-        {
-  "question": "Która metryka odległości jest najczęściej używana w algorytmie k-średnich (K-means)?",
-  "options": [
-    "Odległość euklidesowa.",
-    "Odległość Manhattan.",
-    "Odległość Czebyszewa.",
-    "Wszystkie powyższe."
-  ],
-  "answer": [
-    "Odległość euklidesowa."
-  ]
-}
-,
-        {
-  "question": "W jaki sposób ensemble learning łączy prognozy z różnych modeli?",
-  "options": [
-    "Poprzez wybór najczęściej występującej prognozy.",
-    "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli.",
-    "Poprzez zastosowanie regresji logistycznej do połączenia prognoz.",
-    "Poprzez zastosowanie metody najbliższych sąsiadów do połączenia prognoz."
-  ],
-  "answer": [
-    "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli."
-  ]
-}
-,
-        {
-  "question": "Co to jest Bagging w kontekście ensemble learning?",
-  "options": [
-    "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
-    "Technika redukcji wymiarów danych.",
-    "Algorytm do klasyfikacji danych tekstowych.",
-    "Metoda do generowania sztucznych danych treningowych."
-  ],
-  "answer": [
-    "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
-  ]
-}
-,
-        {
-  "question": "Które z poniższych metryk odległości jest stosowane w algorytmie DBSCAN?",
-  "options": [
-    "Odległość euklidesowa.",
-    "Odległość Manhattan.",
-    "Odległość Czebyszewa.",
-    "Wszystkie powyższe."
-  ],
-  "answer": [
-    "Wszystkie powyższe."
-  ]
-}
-,
-        
+const questions = [
   {
-    "question": "Które z poniższych technik można zastosować do wykrywania anomalii?",
-    "options": [
-      "K-średnich (K-means).",
-      "Drzewa decyzyjne.",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Wykrywanie odstępstw od normy (Outlier Detection)."
-    ],
-    "answer": [
-      "Wykrywanie odstępstw od normy (Outlier Detection)."
-    ]
-  },
-  {
-    "question": "Które z poniższych technik redukcji wymiarów można zastosować przed wykonaniem klasteryzacji?",
-    "options": [
-      "Analiza składowych głównych (PCA).",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Algorytm EM (Expectation-Maximization).",
-      "Regresja logistyczna."
-    ],
-    "answer": [
-      "Analiza składowych głównych (PCA)."
-    ]
-  },
-  {
-    "question": "Macierz kowariancji, obliczona ze znormalizowanego zbioru danych X, ma wymiar 50x50. Oznacza to, że:",
-    "options": [
-      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
-      "Zbiór danych X składa się z 50 przykładów.",
-      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów.",
-      "Dwie odpowiedzi są poprawne"
-    ],
-    "answer": [
-      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
-      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów."
-    ]
-  },
-  {
-    "question": "Kolejne kroki algorytmu PCA są następujące:",
-    "options": [
-      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
-      "Obliczenie macierzy kowariancji, standaryzacja danych w macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
-      "Standaryzacja danych, obliczenie wartości i wektorów własnych macierzy reprezentującej zbiór danych, pomnożenie zbioru danych przez wektory własne.",
-      "Obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, standaryzacja wektorów własnych, pomnożenie zbioru danych przez wektory własne."
-    ],
-    "answer": [
-      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne."
-    ]
-  },
-  {
-    "question": "Efektem zastosowania metody PCA na zbiorze danych jest:",
-    "options": [
+    question: "Efektem zastosowania metody PCA na zbiorze danych jest:",
+    options: [
+      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu.",
       "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
       "Wizualizacja danych wielowymiarowych.",
-      "Przygotowanie danych do uczenia nadzorowanego.",
+      "Przygotowanie danych do uczenia nadzorowanego."
+    ],
+    answer: [
       "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
-    ],
-    "answer": [
-      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
     ]
   },
   {
-    "question": "Co oznacza pojęcie \"inercja\" w kontekście klasteryzacji?",
-    "options": [
-      "Miara jakości klastra, reprezentująca separację między klastrami.",
-      "Suma kwadratów odległości między punktami a centroidami klastrów.",
-      "Technika normalizacji danych przed klasteryzacją.",
-      "Algorytm do przewidywania etykiet klas dla nowych danych."
+    question: "Znormalizowana wartość własna pierwszej składowej głównej wynosi 0.9. Oznacza to, że:",
+    options: [
+      "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych.",
+      "Pierwsza cecha oryginalnego zbioru danych wyjaśnia 90% całkowitej wariancji zbioru danych.",
+      "Waga pierwszej cechy x1 wynosi 0.9 przy obliczaniu nowej cechy z1.",
+      "Szacowane prawdopodobieństwo zachowania skuteczności klasyfikatora uczonego tylko na pierwszej składowej z1 w porównaniu z klasyfikatorem uczonym na wszystkich cechach x1, ..., xn oryginalnego zbioru danych wynosi 90%."
     ],
-    "answer": [
-      "Suma kwadratów odległości między punktami a centroidami klastrów."
+    answer: [
+      "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych."
     ]
   },
   {
-    "question": "Jak można ocenić jakość wykrywania anomalii?",
-    "options": [
-      "Przez porównanie z danymi treningowymi.",
-      "Przez obliczenie miary dokładności (Accuracy).",
-      "Przez analizę miary Precision i Recall.",
-      "Przez porównanie z zewnętrznymi etykietami anomalii."
-    ],
-    "answer": [
-      "Przez analizę miary Precision i Recall.",
-      "Przez porównanie z zewnętrznymi etykietami anomalii."
-    ]
-  },
-  {
-    "question": "Co to jest ensemble learning?",
-    "options": [
-      "Technika redukcji wymiarów danych.",
-      "Metoda do trenowania wielu modeli i łączenia ich prognoz.",
-      "Algorytm do klasyfikacji danych tekstowych.",
-      "Metoda do generowania sztucznych danych treningowych."
-    ],
-    "answer": [
-      "Metoda do trenowania wielu modeli i łączenia ich prognoz."
-    ]
-  },
-  {
-    "question": "Które z poniższych algorytmów można zastosować do klasteryzacji danych o nieliniowej strukturze?",
-    "options": [
-      "K-średnich (K-means).",
-      "Algorytm gęstościowy oparty na odległościach (DBSCAN).",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Metoda Warda w hierarchicznej klasteryzacji."
-    ],
-    "answer": [
-      "Algorytm gęstościowy oparty na odległościach (DBSCAN)."
-    ]
-  },
-  {
-    "question": "Co oznacza pojęcie \"silhouette score\" w kontekście oceny jakości klasteryzacji?",
-    "options": [
-      "Miara gęstości klastrów.",
-      "Miara separacji między klastrami.",
-      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami.",
-      "Miara stabilności klastrów."
-    ],
-    "answer": [
-      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami."
-    ]
-  },
-  {
-    "question": "Klasteryzacja to:",
-    "options": [
+    question: "Klasteryzacja to:",
+    options: [
       "Metoda statystyczna do analizy regresji.",
       "Technika grupowania danych na podstawie podobieństwa.",
       "Algorytm do klasyfikacji danych.",
       "Metoda interpolacji wartości brakujących."
     ],
-    "answer": [
+    answer: [
       "Technika grupowania danych na podstawie podobieństwa."
     ]
   },
   {
-    "question": "Która metryka odległości jest najczęściej używana w algorytmie k-średnich (K-means)?",
-    "options": [
+    question: "Która metryka odległości jest najczęściej używana w algorytmie k-średnich (K-means)?",
+    options: [
       "Odległość euklidesowa.",
       "Odległość Manhattan.",
       "Odległość Czebyszewa.",
       "Wszystkie powyższe."
     ],
-    "answer": [
+    answer: [
       "Odległość euklidesowa."
     ]
   },
   {
-    "question": "Efektem zastosowania metody PCA na zbiorze danych jest:",
-    "options": [
-      "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
-      "Wizualizacja danych wielowymiarowych.",
-      "Przygotowanie danych do uczenia nadzorowanego.",
-      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
-    ],
-    "answer": [
-      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
-    ]
-  },
-  {
-    "question": "Macierz kowariancji, obliczona ze znormalizowanego zbioru danych X, ma wymiar 4x4. Oznacza to, że:",
-    "options": [
-      "Każdy przypadek w zbiorze danych X opisywany jest przez 35 cech.",
-      "Zbiór danych X składa się z 35 przykładów.",
-      "Dla tej macierzy kowariancji istnieje 16 wartości własnych.",
-      "Dwie odpowiedzi są poprawne"
-    ],
-    "answer": 
-      "Zbiór danych X składa się z 35 przykładów."
-    ]
-  },
-  {
-    "question": "Wektor własny pierwszej składowej ma postać w1 = 0.3, 0.4, 0.8, -0.4]. Oznacza to, że:",
-    "options": 
-      "Każdy przypadek w zbiorze danych opisują cztery cechy.",
-      "Zbiór składa się z 4 przykładów.",
-      "Nie może istnieć taki wektor własny gdyż wektory własne nie posiadają wartości ujemnych.",
-      "Nie może istnieć taki wektor własny gdyż jego elementy nie sumują się do wartości 1."
-    ],
-    "answer": 
-      "Każdy przypadek w zbiorze danych opisują cztery cechy."
-    ]
-  },
-  {
-    "question": "Które z poniższych technik można zastosować do wykrywania anomalii?",
-    "options": 
-      "K-średnich (K-means).",
-      "Drzewa decyzyjne.",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Wykrywanie odstępstw od normy (Outlier Detection)."
-    ],
-    "answer": 
-      "Wykrywanie odstępstw od normy (Outlier Detection)."
-    ]
-  },
-  {
-    "question": "Co to jest boostraping w ensemble learning?",
-    "options": 
-      "Technika redukcji wymiarów danych.",
-      "Metoda do generowania sztucznych danych treningowych.",
-      "Algorytm do klasyfikacji danych tekstowych.",
-      "Metoda do oceny jakości ensemble."
-    ],
-    "answer": 
-      "Metoda do generowania sztucznych danych treningowych."
-    ]
-  },
-  {
-    "question": "Co to jest boosting w ensemble learning?",
-    "options": 
+    question: "Co to jest Bagging w kontekście ensemble learning?",
+    options: [
       "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
       "Technika redukcji wymiarów danych.",
       "Algorytm do klasyfikacji danych tekstowych.",
       "Metoda do generowania sztucznych danych treningowych."
     ],
-    "answer": 
+    answer: [
       "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
     ]
-  },
-  {
-    "question": "Które z poniższych technik redukcji wymiarów można zastosować przed wykonaniem klasteryzacji?",
-    "options": 
-      "Analiza składowych głównych (PCA).",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Algorytm EM (Expectation-Maximization).",
-      "Regresja logistyczna."
-    ],
-    "answer": 
-      "Analiza składowych głównych (PCA)."
-    ]
-  },
-  {
-    "question": "Jakie są główne wyzwania związane z interpretacją wyników klasteryzacji?",
-    "options": 
-      "Trudność w określeniu optymalnej liczby klastrów.",
-      "Subiektywność w interpretacji granic klastrów.",
-      "Brak etykiet klas dla danych nieetykietowanych.",
-      "Wszystkie powyższe."
-    ],
-    "answer": 
-      "Wszystkie powyższe."
-    ]
-  },
-  {
-    "question": "Klasteryzacja to:",
-    "options": [
-      "Metoda statystyczna do analizy regresji.",
-      "Technika grupowania danych na podstawie podobieństwa.",
-      "Algorytm do klasyfikacji danych.",
-      "Metoda interpolacji wartości brakujących."
-    ],
-    "answer": [
-      "Technika grupowania danych na podstawie podobieństwa."
-    ]
   }
-]
-;
+];
 
-    let shuffledQuestions = [];
-    let currentQuestionIndex = 0;
-    let selectedAnswers = [];
-    let score = 0;
-    let mistakes = [];
+let shuffledQuestions = [];
+let currentQuestionIndex = 0;
+let selectedAnswers = [];
+let score = 0;
+let mistakes = [];
+let currentOptions = [];
 
-    // Tablica przechowująca aktualną, już potasowaną listę opcji (z informacją czy są poprawne)
-    let currentOptions = [];
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
+function startQuiz() {
+  shuffledQuestions = [...questions];
+  shuffle(shuffledQuestions);
+  currentQuestionIndex = 0;
+  score = 0;
+  mistakes = [];
+  loadQuestion();
+}
 
-    function startQuiz() {
-        // Kopiujemy pytania i je tasujemy
-        shuffledQuestions = [...questions];
-        shuffle(shuffledQuestions);
+function loadQuestion() {
+  document.getElementById("question-container").style.display = "block";
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("mistakes").innerHTML = "";
 
-        currentQuestionIndex = 0;
-        score = 0;
-        mistakes = [];
-        loadQuestion();
-    }
+  const questionData = shuffledQuestions[currentQuestionIndex];
+  document.getElementById("question").innerText = questionData.question;
 
-    function loadQuestion() {
-        document.getElementById("question-container").style.display = "block";
-        document.getElementById("result").innerHTML = "";
-        document.getElementById("mistakes").innerHTML = "";
+  currentOptions = questionData.options.map(opt => ({
+    text: opt,
+    correct: questionData.answer.includes(opt)
+  }));
 
-        const questionData = shuffledQuestions[currentQuestionIndex];
-        document.getElementById("question").innerText = questionData.question;
+  shuffle(currentOptions);
+  selectedAnswers = [];
 
-        // Tworzymy tablicę obiektów { text, correct }, by móc je tasować
-        currentOptions = questionData.options.map(opt => {
-            return {
-                text: opt,
-                correct: Array.isArray(questionData.answer)
-                    ? questionData.answer.includes(opt)
-                    : questionData.answer === opt
-            };
-        });
+  const buttons = document.querySelectorAll(".options button");
+  currentOptions.forEach((optionObj, index) => {
+    const button = buttons[index];
+    button.innerText = optionObj.text;
+    button.classList.remove("selected");
+    button.disabled = false;
+  });
+}
 
-        // Tasujemy opcje odpowiedzi
-        shuffle(currentOptions);
+function selectAnswer(index) {
+  const button = document.querySelectorAll(".options button")[index];
+  if (button.classList.contains("selected")) {
+    button.classList.remove("selected");
+    selectedAnswers = selectedAnswers.filter(i => i !== index);
+  } else {
+    button.classList.add("selected");
+    selectedAnswers.push(index);
+  }
+}
 
-        // Resetujemy zaznaczenie
-        selectedAnswers = [];
+function checkAnswer() {
+  const correctIndexes = currentOptions
+    .map((obj, i) => obj.correct ? i : -1)
+    .filter(i => i >= 0);
 
-        // Podpinamy tekst do przycisków i usuwamy stare zaznaczenia
-        const buttons = document.querySelectorAll(".options button");
-        currentOptions.forEach((optionObj, index) => {
-            const button = buttons[index];
-            button.innerText = optionObj.text;
-            button.classList.remove("selected");
-            button.disabled = false;
-        });
-    }
+  if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctIndexes.sort())) {
+    score++;
+  } else {
+    const questionData = shuffledQuestions[currentQuestionIndex];
+    mistakes.push({
+      question: questionData.question,
+      selectedAnswer: selectedAnswers.map(idx => currentOptions[idx].text),
+      correctAnswer: correctIndexes.map(idx => currentOptions[idx].text)
+    });
+  }
 
-    function selectAnswer(index) {
-        const button = document.querySelectorAll(".options button")[index];
+  currentQuestionIndex++;
+  if (currentQuestionIndex < shuffledQuestions.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
 
-        // Toggle zaznaczenia
-        if (button.classList.contains("selected")) {
-            button.classList.remove("selected");
-            selectedAnswers = selectedAnswers.filter(i => i !== index);
-        } else {
-            button.classList.add("selected");
-            selectedAnswers.push(index);
-        }
-    }
+function showResult() {
+  document.getElementById("question-container").style.display = "none";
+  document.getElementById("result").innerText = `Twój wynik: ${score} / ${shuffledQuestions.length}`;
 
-    function checkAnswer() {
-        // Wyznaczamy indeksy poprawnych odpowiedzi w potasowanej tablicy
-        const correctIndexes = currentOptions
-            .map((obj, i) => obj.correct ? i : -1)
-            .filter(i => i >= 0);
+  if (mistakes.length > 0) {
+    let mistakeText = "Błędne odpowiedzi:<br>";
+    mistakes.forEach((mistake, index) => {
+      mistakeText += `${index + 1}. ${mistake.question}<br>
+                      Twoje odpowiedzi: ${mistake.selectedAnswer.join(", ")}<br>
+                      Poprawne odpowiedzi: ${mistake.correctAnswer.join(", ")}<br><br>`;
+    });
+    document.getElementById("mistakes").innerHTML = mistakeText;
+  } else {
+    document.getElementById("mistakes").innerText = "Gratulacje! Wszystkie odpowiedzi były poprawne.";
+  }
+}
 
-        // Porównujemy wybrane indeksy z indeksami poprawnych
-        if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctIndexes.sort())) {
-            score++;
-        } else {
-            const questionData = shuffledQuestions[currentQuestionIndex];
-            // Zapisujemy błędną odpowiedź w mistakes
-            mistakes.push({
-                question: questionData.question,
-                selectedAnswer: selectedAnswers.map(idx => currentOptions[idx].text),
-                correctAnswer: correctIndexes.map(idx => currentOptions[idx].text)
-            });
-        }
+function returnToMenu() {
+  window.location.href = "index.html";
+}
 
-        currentQuestionIndex++;
-        if (currentQuestionIndex < shuffledQuestions.length) {
-            loadQuestion();
-        } else {
-            showResult();
-        }
-    }
-
-    function showResult() {
-        document.getElementById("question-container").style.display = "none";
-        document.getElementById("result").innerText =
-            `Twój wynik: ${score} / ${shuffledQuestions.length}`;
-
-        if (mistakes.length > 0) {
-            let mistakeText = "Błędne odpowiedzi:<br>";
-            mistakes.forEach((mistake, index) => {
-                mistakeText += `${index + 1}. ${mistake.question}<br>
-                                Twoje odpowiedzi: ${mistake.selectedAnswer.join(", ")}<br>
-                                Poprawne odpowiedzi: ${mistake.correctAnswer.join(", ")}<br><br>`;
-            });
-            document.getElementById("mistakes").innerHTML = mistakeText;
-        } else {
-            document.getElementById("mistakes").innerText =
-                "Gratulacje! Wszystkie odpowiedzi były poprawne.";
-        }
-    }
-
-    function returnToMenu() {
-        // Zmień na właściwą ścieżkę do menu
-        window.location.href = "index.html";
-    }
-
-    // Start automatycznie przy wczytaniu
-    startQuiz();
+startQuiz();
 </script>
 
 </body>
