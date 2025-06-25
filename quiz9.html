@@ -360,7 +360,155 @@ const questions = [
     answer: [
       "Wszystkie powyższe."
     ]
+  },
+  {
+    "question": "Dlaczego klasyfikacja jest „nieliniowa” mimo zastosowania liniowej części adaptacyjnej?",
+    "options": [
+      "Bo klasyfikator zawsze korzysta z funkcji sinusoidalnej",
+      "Bo dane wejściowe są nieliniowo przekształcane",
+      "Bo na końcu modelu znajduje się nieliniowość decyzyjna",
+      "Bo klasyfikacja nigdy nie działa na danych liniowych"
+    ],
+    "answer": [
+      "Bo na końcu modelu znajduje się nieliniowość decyzyjna"
+    ]
+  },
+  {
+    "question": "Która z poniższych funkcji nie jest typową funkcją aktywacji?",
+    "options": [
+      "Liniowa",
+      "Tangens",
+      "Logistyczna",
+      "Jednostronnie obcięta funkcja liniowa (ang. rectified linear unit)",
+      "Signum"
+    ],
+    "answer": [
+      "Tangens"
+    ]
+  },
+  {
+    "question": "W jednym z kroków algorytmu Analizy Głównych Składowych PCA należy wyznaczyć wartości i wektory własne pewnej macierzy kowariancji. Jak możemy zinterpretować kolejne wartości własne?",
+    "options": [
+      "Jako wartości wariancji dla kolejnych głównych składowych",
+      "Jako miarę rozrzutu początkowych cech przetwarzanego zbioru",
+      "Jako ortonormalną przestrzeń cech wejściowych",
+      "Te wartości nie mają swej interpretacji",
+      "Żadna z powyższych odpowiedzi nie jest poprawna"
+    ],
+    "answer": [
+      "Jako wartości wariancji dla kolejnych głównych składowych"
+    ]
+  },
+  {
+    "question": "Co oznacza pluralizm w kontekście głosowania zespołowego?",
+    "options": [
+      "Wszyscy klasyfikatory muszą się zgodzić",
+      "Wybierana jest etykieta z największą liczbą głosów, nawet jeśli nie przekracza 50%",
+      "Losowe przypisanie etykiety",
+      "Głosują tylko najlepsze klasyfikatory"
+    ],
+    "answer": [
+      "Wybierana jest etykieta z największą liczbą głosów, nawet jeśli nie przekracza 50%"
+    ]
+  },
+  {
+    "question": "Dlaczego bootstrap sampling w baggingu pozwala zwiększyć odporność na przeuczenie?",
+    "options": [
+      "Ponieważ eliminowane są błędne dane",
+      "Każdy model trenuje się na tym samym zbiorze",
+      "Modele są uczone na różnych, losowych podzbiorach z powtórzeniami",
+      "Zbiór treningowy jest powiększany przez augmentację"
+    ],
+    "answer": [
+      "Modele są uczone na różnych, losowych podzbiorach z powtórzeniami"
+    ]
+  },
+  {
+    "question": "Czym w kontekście analizy danych są anomalie?",
+    "options": [
+      "Punkty idealnie dopasowane do modelu",
+      "Typowe przypadki w zbiorze danych",
+      "Obiekty różniące się od większości innych, mogące sygnalizować błędy lub rzadkie zjawiska",
+      "Przykłady używane do trenowania klasyfikatora"
+    ],
+    "answer": [
+      "Obiekty różniące się od większości innych, mogące sygnalizować błędy lub rzadkie zjawiska"
+    ]
+  },
+  {
+    "question": "Czym różni się anomalie kontekstowa od punktowej?",
+    "options": [
+      "Występuje tylko w danych jednowymiarowych",
+      "Jest odstająca względem sąsiadów czasowych lub kontekstu",
+      "Jest zawsze błędem pomiarowym",
+      "Zawsze można ją wykryć za pomocą testu Grubbsa"
+    ],
+    "answer": [
+      "Jest odstająca względem sąsiadów czasowych lub kontekstu"
+    ]
+  },
+  {
+    "question": "Co ogranicza perceptron binarny w kontekście zdolności klasyfikacyjnych?",
+    "options": [
+      "Może klasyfikować tylko dane numeryczne",
+      "Może rozwiązywać tylko problemy liniowo separowalne",
+      "Nie można go używać bez warstwy ukrytej",
+      "Działa tylko na danych tekstowych"
+    ],
+    "answer": [
+      "Może rozwiązywać tylko problemy liniowo separowalne"
+    ]
+  },
+  {
+    "question": "Co robi algorytm kieszonkowy (pocket algorithm)?",
+    "options": [
+      "Przechowuje najlepszy dotąd wynik wagi przy klasyfikacji danych",
+      "Usuwa dane spoza marginesu",
+      "Optymalizuje wagi dla danych losowych",
+      "Zapobiega propagacji błędów"
+    ],
+    "answer": [
+      "Przechowuje najlepszy dotąd wynik wagi przy klasyfikacji danych"
+    ]
+  },
+  {
+    "question": "Co jest podstawowym mechanizmem działania algorytmu k-NN?",
+    "options": [
+      "Budowanie drzewa z rozgałęzieniami",
+      "Szukanie klas przez podobieństwo do danych testowych",
+      "Przekształcanie danych wejściowych przez funkcje nieliniowe",
+      "Dopasowywanie wag przez propagację wsteczną"
+    ],
+    "answer": [
+      "Szukanie klas przez podobieństwo do danych testowych"
+    ]
+  },
+  {
+    "question": "Jaką funkcję pełni metryka euklidesowa w algorytmie k-NN?",
+    "options": [
+      "Określa liczbę klas decyzyjnych",
+      "Wybiera najbardziej informacyjne cechy",
+      "Oblicza odległości między punktami treningowymi a testowymi",
+      "Stosowana jest tylko w przypadku danych binarnych"
+    ],
+    "answer": [
+      "Oblicza odległości między punktami treningowymi a testowymi"
+    ]
+  },
+  {
+    "question": "Która z poniższych funkcji nie jest typową funkcją aktywacji?",
+    "options": [
+      "ReLU",
+      "Sigmoid",
+      "Tangens hiperboliczny",
+      "Funkcja wykładnicza",
+      "SiLU"
+    ],
+    "answer": [
+      "Funkcja wykładnicza"
+    ]
   }
+
 ];
 
 
