@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz</title>
+  <title>Quiz z inżynierii kosmicznej</title>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -31,7 +31,15 @@
     }
     .question {
       font-size: 20px;
+      margin-bottom: 15px;
+    }
+    /* NOWE: obrazek pytania */
+    #question-image {
+      max-width: 100%;
+      max-height: 250px;
       margin-bottom: 20px;
+      border-radius: 8px;
+      display: none; /* domyślnie ukryty */
     }
     .options button {
       width: 80%;
@@ -101,9 +109,13 @@
 <body>
 
 <div class="quiz-container">
-  <h1>Quiz z metod obliczeniowych</h1>
+  <h1>Quiz z inżynierii kosmicznej</h1>
   <div id="question-container">
     <div class="question" id="question">Pytanie pojawi się tutaj</div>
+
+    <!-- NOWE: miejsce na obrazek pytania -->
+    <img id="question-image" src="" alt="Ilustracja do pytania">
+
     <div class="options">
       <button onclick="selectAnswer(0)">Odpowiedź 1</button>
       <button onclick="selectAnswer(1)">Odpowiedź 2</button>
@@ -118,399 +130,69 @@
 </div>
 
 <script>
+/*
+  STRUKTURA PYTANIA Z OBSŁUGĄ OBRAZKA:
+  - pole "image" jest opcjonalne
+  - jeśli go nie będzie -> obrazek się nie pojawi
+  - jeśli będzie (np. "img/plume.png") -> zostanie wyświetlony nad odpowiedziami
+*/
+
 const questions = [
   {
-    question: "Efektem zastosowania metody PCA na zbiorze danych jest:",
+    question: "Sun-synchronous orbit has ______ precession period equal to the Earth's revolution period around the Sun. Thanks to that the satellite passes over any given point on the Earth surface at nearly constant local time.",
     options: [
-      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu.",
-      "Eliminacja niektórych cech w celu zmniejszenia objętości danych.",
-      "Wizualizacja danych wielowymiarowych.",
-      "Przygotowanie danych do uczenia nadzorowanego."
+      "perigee",
+      "ascending node",
+      "apogee",
+      "true anomaly"
     ],
     answer: [
-      "Obrót układu współrzędnych tworzonego przez ten zbiór w taki sposób, aby zmaksymalizować wariancję kolejnych współrzędnych nowo powstałego układu."
-    ]
+      "ascending node"
+    ],
+    // PRZYKŁAD: obrazek do pytania (na razie możesz zostawić pusty string albo usunąć to pole)
+    image: "img/plume.png" // np. "img/sso_groundtrack.png"
   },
   {
-    question: "Znormalizowana wartość własna pierwszej składowej głównej wynosi 0.9. Oznacza to, że:",
+    question: "Materials in space experience outgassing. Which problem is the most typical consequence?",
     options: [
-      "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych.",
-      "Pierwsza cecha oryginalnego zbioru danych wyjaśnia 90% całkowitej wariancji zbioru danych.",
-      "Waga pierwszej cechy x1 wynosi 0.9 przy obliczaniu nowej cechy z1.",
-      "Szacowane prawdopodobieństwo zachowania skuteczności klasyfikatora uczonego tylko na pierwszej składowej z1 w porównaniu z klasyfikatorem uczonym na wszystkich cechach x1, ..., xn oryginalnego zbioru danych wynosi 90%."
+      "Contamination of solar arrays",
+      "Ionisation of satellite bus",
+      "Single event upsets in memory",
+      "Change of orbital inclination"
     ],
     answer: [
-      "Pierwsza składowa wyjaśnia 90% całkowitej wariancji rozpatrywanego zbioru danych."
-    ]
+      "Contamination of solar arrays"
+    ],
+    image: "" // np. "img/outgassing_panel.png"
   },
   {
-    question: "Wektor własny pierwszej składowej ma postać w1 = [0.3, 0.4, 0.8, -0.4]. Oznacza to, że:",
+    question: "Which statement about a geostationary orbit is correct?",
     options: [
-      "a) Każdy przypadek w zbiorze danych opisują cztery cechy.",
-      "b) Pierwsza składowa główna jest liczona jako średnia ważona kolejnych cech zbioru i elementów tego wektora własnego, postaci: x1*0.3 + x2*0.4 + x3*0.8 + x4*(-0.4).",
-      "c) Nie może istnieć taki wektor własny, gdyż jego elementy nie sumują się do wartości 1.",
-      "d) Dwie odpowiedzi są poprawne (Czyli a i b)."
+      "It has zero inclination and the satellite orbits above the equator with the same rotational period as the Earth, so it stays over nearly the same point on Earth.",
+      "It has very high eccentricity, so the satellite spends most of the time near apogee over high latitudes.",
+      "Its orbital period is equal to one month.",
+      "It passes over both poles every revolution."
     ],
     answer: [
-      "Dwie odpowiedzi są poprawne (Czyli a i b)."
-    ]
+      "It has zero inclination and the satellite orbits above the equator with the same rotational period as the Earth, so it stays over nearly the same point on Earth."
+    ],
+    image: "" // np. "img/geostationary.png"
   },
   {
-    question: "Klasteryzacja to:",
+    question: "In the standard set of Keplerian orbital elements, which symbol denotes the argument of periapsis?",
     options: [
-      "Metoda statystyczna do analizy regresji.",
-      "Technika grupowania danych na podstawie podobieństwa.",
-      "Algorytm do klasyfikacji danych.",
-      "Metoda interpolacji wartości brakujących."
+      "i",
+      "Ω",
+      "ω",
+      "ν"
     ],
     answer: [
-      "Technika grupowania danych na podstawie podobieństwa."
-    ]
-  },
-  {
-    question: "Która metryka odległości jest najczęściej używana w algorytmie k-średnich (K-means)?",
-    options: [
-      "Odległość euklidesowa.",
-      "Odległość Manhattan.",
-      "Odległość Czebyszewa.",
-      "Wszystkie powyższe."
+      "ω"
     ],
-    answer: [
-      "Odległość euklidesowa."
-    ]
-  },
-  {
-    question: "W jaki sposób ensemble learning łączy prognozy z różnych modeli?",
-    options: [
-      "Poprzez wybór najczęściej występującej prognozy.",
-      "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli.",
-      "Poprzez zastosowanie regresji logistycznej do połączenia prognoz.",
-      "Poprzez zastosowanie metody najbliższych sąsiadów do połączenia prognoz."
-    ],
-    answer: [
-      "Poprzez obliczenie średniej lub ważonej prognozy z różnych modeli."
-    ]
-  },
-  {
-    question: "Co to jest Bagging w kontekście ensemble learning?",
-    options: [
-      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
-      "Technika redukcji wymiarów danych.",
-      "Algorytm do klasyfikacji danych tekstowych.",
-      "Metoda do generowania sztucznych danych treningowych."
-    ],
-    answer: [
-      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
-    ]
-  },
-  {
-    question: "Które z poniższych metryk odległości jest stosowane w algorytmie DBSCAN?",
-    options: [
-      "Odległość euklidesowa.",
-      "Odległość Manhattan.",
-      "Odległość Czebyszewa.",
-      "Wszystkie powyższe."
-    ],
-    answer: [
-      "Wszystkie powyższe."
-    ]
-  },
-  {
-    question: "Które z poniższych technik można zastosować do wykrywania anomalii?",
-    options: [
-      "K-średnich (K-means).",
-      "Drzewa decyzyjne.",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Wykrywanie odstępstw od normy (Outlier Detection)."
-    ],
-    answer: [
-      "Wykrywanie odstępstw od normy (Outlier Detection)."
-    ]
-  },
-  {
-    question: "Które z poniższych technik redukcji wymiarów można zastosować przed wykonaniem klasteryzacji?",
-    options: [
-      "Analiza składowych głównych (PCA).",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Algorytm EM (Expectation-Maximization).",
-      "Regresja logistyczna."
-    ],
-    answer: [
-      "Analiza składowych głównych (PCA)."
-    ]
-  },
-  {
-    question: "Macierz kowariancji, obliczona ze znormalizowanego zbioru danych X, ma wymiar 50x50. Oznacza to, że:",
-    options: [
-      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
-      "Zbiór danych X składa się z 50 przykładów.",
-      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów.",
-      "Dwie odpowiedzi są poprawne."
-    ],
-    answer: [
-      "Każdy przypadek w zbiorze danych X opisywany jest przez 50 cech.",
-      "Każdy z wektorów własnych macierzy kowariancji ma 50 elementów."
-    ]
-  },
-  {
-    question: "Kolejne kroki algorytmu PCA są następujące:",
-    options: [
-      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
-      "Obliczenie macierzy kowariancji, standaryzacja danych w macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne.",
-      "Standaryzacja danych, obliczenie wartości i wektorów własnych macierzy reprezentującej zbiór danych, pomnożenie zbioru danych przez wektory własne.",
-      "Obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, standaryzacja wektorów własnych, pomnożenie zbioru danych przez wektory własne."
-    ],
-    answer: [
-      "Standaryzacja danych, obliczenie macierzy kowariancji, obliczenie wartości i wektorów własnych macierzy kowariancji, pomnożenie zbioru danych przez wektory własne."
-    ]
-  },
-  {
-    question: "Co oznacza pojęcie \"inercja\" w kontekście klasteryzacji?",
-    options: [
-      "Miara jakości klastra, reprezentująca separację między klastrami.",
-      "Suma kwadratów odległości między punktami a centroidami klastrów.",
-      "Technika normalizacji danych przed klasteryzacją.",
-      "Algorytm do przewidywania etykiet klas dla nowych danych."
-    ],
-    answer: [
-      "Suma kwadratów odległości między punktami a centroidami klastrów."
-    ]
-  },
-  {
-    question: "Jak można ocenić jakość wykrywania anomalii?",
-    options: [
-      "Przez porównanie z danymi treningowymi.",
-      "Przez obliczenie miary dokładności (Accuracy).",
-      "Przez analizę miary Precision i Recall.",
-      "Przez porównanie z zewnętrznymi etykietami anomalii."
-    ],
-    answer: [
-      "Przez analizę miary Precision i Recall.",
-      "Przez porównanie z zewnętrznymi etykietami anomalii."
-    ]
-  },
-  {
-    question: "Co to jest ensemble learning?",
-    options: [
-      "Technika redukcji wymiarów danych.",
-      "Metoda do trenowania wielu modeli i łączenia ich prognoz.",
-      "Algorytm do klasyfikacji danych tekstowych.",
-      "Metoda do generowania sztucznych danych treningowych."
-    ],
-    answer: [
-      "Metoda do trenowania wielu modeli i łączenia ich prognoz."
-    ]
-  },
-  {
-    question: "Które z poniższych algorytmów można zastosować do klasteryzacji danych o nieliniowej strukturze?",
-    options: [
-      "K-średnich (K-means).",
-      "Algorytm gęstościowy oparty na odległościach (DBSCAN).",
-      "Metoda najbliższych sąsiadów (k-NN).",
-      "Metoda Warda w hierarchicznej klasteryzacji."
-    ],
-    answer: [
-      "Algorytm gęstościowy oparty na odległościach (DBSCAN)."
-    ]
-  },
-  {
-    question: "Co oznacza pojęcie \"silhouette score\" w kontekście oceny jakości klasteryzacji?",
-    options: [
-      "Miara gęstości klastrów.",
-      "Miara separacji między klastrami.",
-      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami.",
-      "Miara stabilności klastrów."
-    ],
-    answer: [
-      "Miara podobieństwa wewnątrz klastrów i różnicy między klastrami."
-    ]
-  },
-  {
-    question: "Co to jest boostraping w ensemble learning?",
-    options: [
-      "Technika redukcji wymiarów danych.",
-      "Metoda do generowania sztucznych danych treningowych.",
-      "Algorytm do klasyfikacji danych tekstowych.",
-      "Metoda do oceny jakości ensemble."
-    ],
-    answer: [
-      "Metoda do generowania sztucznych danych treningowych."
-    ]
-  },
-  {
-    question: "Co to jest boosting w ensemble learning?",
-    options: [
-      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji.",
-      "Technika redukcji wymiarów danych.",
-      "Algorytm do klasyfikacji danych tekstowych.",
-      "Metoda do generowania sztucznych danych treningowych."
-    ],
-    answer: [
-      "Metoda łączenia wielu modeli w celu uzyskania lepszych predykcji."
-    ]
-  },
-  {
-    question: "Jakie są główne wyzwania związane z interpretacją wyników klasteryzacji?",
-    options: [
-      "Trudność w określeniu optymalnej liczby klastrów.",
-      "Subiektywność w interpretacji granic klastrów.",
-      "Brak etykiet klas dla danych nieetykietowanych.",
-      "Wszystkie powyższe."
-    ],
-    answer: [
-      "Wszystkie powyższe."
-    ]
-  },
-  {
-    "question": "Dlaczego klasyfikacja jest „nieliniowa” mimo zastosowania liniowej części adaptacyjnej?",
-    "options": [
-      "Bo klasyfikator zawsze korzysta z funkcji sinusoidalnej",
-      "Bo dane wejściowe są nieliniowo przekształcane",
-      "Bo na końcu modelu znajduje się nieliniowość decyzyjna",
-      "Bo klasyfikacja nigdy nie działa na danych liniowych"
-    ],
-    "answer": [
-      "Bo na końcu modelu znajduje się nieliniowość decyzyjna"
-    ]
-  },
-  {
-    "question": "Która z poniższych funkcji nie jest typową funkcją aktywacji?",
-    "options": [
-      "Liniowa",
-      "Tangens",
-      "Logistyczna",
-      "Jednostronnie obcięta funkcja liniowa (ang. rectified linear unit)",
-      "Signum"
-    ],
-    "answer": [
-      "Tangens"
-    ]
-  },
-  {
-    "question": "W jednym z kroków algorytmu Analizy Głównych Składowych PCA należy wyznaczyć wartości i wektory własne pewnej macierzy kowariancji. Jak możemy zinterpretować kolejne wartości własne?",
-    "options": [
-      "Jako wartości wariancji dla kolejnych głównych składowych",
-      "Jako miarę rozrzutu początkowych cech przetwarzanego zbioru",
-      "Jako ortonormalną przestrzeń cech wejściowych",
-      "Te wartości nie mają swej interpretacji",
-      "Żadna z powyższych odpowiedzi nie jest poprawna"
-    ],
-    "answer": [
-      "Jako wartości wariancji dla kolejnych głównych składowych"
-    ]
-  },
-  {
-    "question": "Co oznacza pluralizm w kontekście głosowania zespołowego?",
-    "options": [
-      "Wszyscy klasyfikatory muszą się zgodzić",
-      "Wybierana jest etykieta z największą liczbą głosów, nawet jeśli nie przekracza 50%",
-      "Losowe przypisanie etykiety",
-      "Głosują tylko najlepsze klasyfikatory"
-    ],
-    "answer": [
-      "Wybierana jest etykieta z największą liczbą głosów, nawet jeśli nie przekracza 50%"
-    ]
-  },
-  {
-    "question": "Dlaczego bootstrap sampling w baggingu pozwala zwiększyć odporność na przeuczenie?",
-    "options": [
-      "Ponieważ eliminowane są błędne dane",
-      "Każdy model trenuje się na tym samym zbiorze",
-      "Modele są uczone na różnych, losowych podzbiorach z powtórzeniami",
-      "Zbiór treningowy jest powiększany przez augmentację"
-    ],
-    "answer": [
-      "Modele są uczone na różnych, losowych podzbiorach z powtórzeniami"
-    ]
-  },
-  {
-    "question": "Czym w kontekście analizy danych są anomalie?",
-    "options": [
-      "Punkty idealnie dopasowane do modelu",
-      "Typowe przypadki w zbiorze danych",
-      "Obiekty różniące się od większości innych, mogące sygnalizować błędy lub rzadkie zjawiska",
-      "Przykłady używane do trenowania klasyfikatora"
-    ],
-    "answer": [
-      "Obiekty różniące się od większości innych, mogące sygnalizować błędy lub rzadkie zjawiska"
-    ]
-  },
-  {
-    "question": "Czym różni się anomalie kontekstowa od punktowej?",
-    "options": [
-      "Występuje tylko w danych jednowymiarowych",
-      "Jest odstająca względem sąsiadów czasowych lub kontekstu",
-      "Jest zawsze błędem pomiarowym",
-      "Zawsze można ją wykryć za pomocą testu Grubbsa"
-    ],
-    "answer": [
-      "Jest odstająca względem sąsiadów czasowych lub kontekstu"
-    ]
-  },
-  {
-    "question": "Co ogranicza perceptron binarny w kontekście zdolności klasyfikacyjnych?",
-    "options": [
-      "Może klasyfikować tylko dane numeryczne",
-      "Może rozwiązywać tylko problemy liniowo separowalne",
-      "Nie można go używać bez warstwy ukrytej",
-      "Działa tylko na danych tekstowych"
-    ],
-    "answer": [
-      "Może rozwiązywać tylko problemy liniowo separowalne"
-    ]
-  },
-  {
-    "question": "Co robi algorytm kieszonkowy (pocket algorithm)?",
-    "options": [
-      "Przechowuje najlepszy dotąd wynik wagi przy klasyfikacji danych",
-      "Usuwa dane spoza marginesu",
-      "Optymalizuje wagi dla danych losowych",
-      "Zapobiega propagacji błędów"
-    ],
-    "answer": [
-      "Przechowuje najlepszy dotąd wynik wagi przy klasyfikacji danych"
-    ]
-  },
-  {
-    "question": "Co jest podstawowym mechanizmem działania algorytmu k-NN?",
-    "options": [
-      "Budowanie drzewa z rozgałęzieniami",
-      "Szukanie klas przez podobieństwo do danych testowych",
-      "Przekształcanie danych wejściowych przez funkcje nieliniowe",
-      "Dopasowywanie wag przez propagację wsteczną"
-    ],
-    "answer": [
-      "Szukanie klas przez podobieństwo do danych testowych"
-    ]
-  },
-  {
-    "question": "Jaką funkcję pełni metryka euklidesowa w algorytmie k-NN?",
-    "options": [
-      "Określa liczbę klas decyzyjnych",
-      "Wybiera najbardziej informacyjne cechy",
-      "Oblicza odległości między punktami treningowymi a testowymi",
-      "Stosowana jest tylko w przypadku danych binarnych"
-    ],
-    "answer": [
-      "Oblicza odległości między punktami treningowymi a testowymi"
-    ]
-  },
-  {
-    "question": "Która z poniższych funkcji nie jest typową funkcją aktywacji?",
-    "options": [
-      "ReLU",
-      "Sigmoid",
-      "Tangens hiperboliczny",
-      "Funkcja wykładnicza",
-      "SiLU"
-    ],
-    "answer": [
-      "Funkcja wykładnicza"
-    ]
+    image: "" // np. "img/kepler_elements.png"
   }
-
+  // tutaj możesz dopisać kolejne pytania w tym samym formacie
 ];
-
 
 let shuffledQuestions = [];
 let currentQuestionIndex = 0;
@@ -542,6 +224,16 @@ function loadQuestion() {
 
   const questionData = shuffledQuestions[currentQuestionIndex];
   document.getElementById("question").innerText = questionData.question;
+
+  // NOWE: obsługa obrazka
+  const imgEl = document.getElementById("question-image");
+  if (questionData.image && questionData.image.trim() !== "") {
+    imgEl.src = questionData.image;
+    imgEl.style.display = "block";
+  } else {
+    imgEl.src = "";
+    imgEl.style.display = "none";
+  }
 
   currentOptions = questionData.options.map(opt => ({
     text: opt,
