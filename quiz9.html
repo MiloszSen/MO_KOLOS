@@ -139,59 +139,288 @@
 
 const questions = [
   {
-    question: "Sun-synchronous orbit has ______ precession period equal to the Earth's revolution period around the Sun. Thanks to that the satellite passes over any given point on the Earth surface at nearly constant local time.",
-    options: [
-      "perigee",
-      "ascending node",
-      "apogee",
-      "true anomaly"
+    "question": "1. Wiemy, że struktura (G,h) jest grupą z elementem neutralnym e. Wskaż, które z warunków są wówczas spełnione.",
+    "options": [
+      "A. ∀g ∈ G ∃g̃ ∈ G: h(g, g̃) = e",
+      "B. ∃g̃ ∈ G ∀g ∈ G: h(g, g̃) = e",
+      "C. ∃g ∈ G: h(g, g) = e",
+      "D. Jeżeli działanie h nie jest przemienne, to struktura (G, h) nie jest grupą"
     ],
-    answer: [
-      "ascending node"
-    ],
-    // PRZYKŁAD: obrazek do pytania (na razie możesz zostawić pusty string albo usunąć to pole)
-    image: "img/plume.png" // np. "img/sso_groundtrack.png"
+    "answer": [
+      "A. ∀g ∈ G ∃g̃ ∈ G: h(g, g̃) = e",
+      "C. ∃g ∈ G: h(g, g) = e"
+    ]
   },
   {
-    question: "Materials in space experience outgassing. Which problem is the most typical consequence?",
-    options: [
-      "Contamination of solar arrays",
-      "Ionisation of satellite bus",
-      "Single event upsets in memory",
-      "Change of orbital inclination"
+    "question": "2. Rozważmy układ równań liniowych:\n2x - y + z = 0\nx + 2y + 3z = 0\n3x + y + 4z = 0\nZaznacz poprawne odpowiedzi charakteryzujące jego rozwiązania.",
+    "options": [
+      "A. Punkt (1,1,-1) jest rozwiązaniem tego układu",
+      "B. Punkt (1,1,-1) jest jedynym rozwiązaniem tego układu",
+      "C. Układ posiada nieskończenie wiele rozwiązań",
+      "D. Każda trójka liczb (x, y, z) jest rozwiązaniem tego układu"
     ],
-    answer: [
-      "Contamination of solar arrays"
-    ],
-    image: "" // np. "img/outgassing_panel.png"
+    "answer": [
+      "A. Punkt (1,1,-1) jest rozwiązaniem tego układu",
+      "C. Układ posiada nieskończenie wiele rozwiązań"
+    ]
   },
   {
-    question: "Which statement about a geostationary orbit is correct?",
-    options: [
-      "It has zero inclination and the satellite orbits above the equator with the same rotational period as the Earth, so it stays over nearly the same point on Earth.",
-      "It has very high eccentricity, so the satellite spends most of the time near apogee over high latitudes.",
-      "Its orbital period is equal to one month.",
-      "It passes over both poles every revolution."
+    "question": "3. Niech A będzie macierzą rzeczywistą o wymiarze 3×3. Dokończ zdanie: „Układ równań Ax=b ...” w taki sposób, aby otrzymać zdanie prawdziwe, wybierając wszystkie poprawne odpowiedzi.",
+    "options": [
+      "A. Żadna z pozostałych odpowiedzi nie jest poprawna",
+      "B. ... posiada rozwiązanie dla dowolnego wektora b ∈ R³",
+      "C. ... posiada trzy rozwiązania, o ile det(A) ≠ 0",
+      "D. ... posiada nieskończenie wiele rozwiązań, o ile det A = det A₁ = det A₂ = det A₃ = 0 gdzie Aᵢ to macierz powstała z macierzy A przez zastąpienie jej i-tej kolumny wektorem b"
     ],
-    answer: [
-      "It has zero inclination and the satellite orbits above the equator with the same rotational period as the Earth, so it stays over nearly the same point on Earth."
-    ],
-    image: "" // np. "img/geostationary.png"
+    "answer": [
+      "D. ... posiada nieskończenie wiele rozwiązań, o ile det A = det A₁ = det A₂ = det A₃ = 0 gdzie Aᵢ to macierz powstała z macierzy A przez zastąpienie jej i-tej kolumny wektorem b"
+    ]
   },
   {
-    question: "In the standard set of Keplerian orbital elements, which symbol denotes the argument of periapsis?",
-    options: [
-      "i",
-      "Ω",
-      "ω",
-      "ν"
+    "question": "4. Rozważmy układ równań liniowych Ax=b gdzie A jest macierzą kwadratową wymiaru n × n, a b ∈ Rⁿ. Wówczas spełnione są warunki:",
+    "options": [
+      "A. jeżeli det A = 0, to układ ten posiada nieskończenie wiele rozwiązań",
+      "B. jeżeli układ ten jest sprzeczny, to rząd macierzy A jest nie większy niż n - 1",
+      "C. jeżeli układ ten posiada rozwiązanie, to det A ≠ 0",
+      "D. jeżeli układ ten jest sprzeczny, to b ≠ 0"
     ],
-    answer: [
-      "ω"
+    "answer": [
+      "B. jeżeli układ ten jest sprzeczny, to rząd macierzy A jest nie większy niż n - 1",
+      "D. jeżeli układ ten jest sprzeczny, to b ≠ 0"
+    ]
+  },
+  {
+    "question": "5. Niech g będzie wielomianem rzeczywistym stopnia 5, takim że g(1 + i) = g(2 - i) = g(1) = 0. Co można powiedzieć o jego pierwiastkach? Wskaż prawidłowe odpowiedzi.",
+    "options": [
+      "Pierwiastków jest pięć: 1+i, 1-i, 2-i, 2+i, 1",
+      "Suma pierwiastków jest równa: 7"
     ],
-    image: "" // np. "img/kepler_elements.png"
+    "answer": [
+      "Pierwiastków jest pięć: 1+i, 1-i, 2-i, 2+i, 1",
+      "Suma pierwiastków jest równa: 7"
+    ]
+  },
+  {
+    "question": "6. Rozważmy równanie algebraiczne stopnia n w postaci xⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀ = 0. Co można powiedzieć o jego rozwiązaniach?",
+    "options": [
+      "A. Jeżeli współczynniki aₙ₋₁, ..., a₀ są rzeczywiste, to dla dowolnego n > 1 równanie to posiada przynajmniej jedno rozwiązanie rzeczywiste",
+      "B. Suma wszystkich rozwiązań tego równania wynosi 0 wtedy i tylko wtedy, gdy aₙ₋₁ = 0",
+      "C. Równanie to zawsze (tj. Dla dowolnych aₙ₋₁, ..., a₀ ∈ C) posiada dokładnie n rozwiązań (liczonych z krotnościami)",
+      "D. Rozwiązania tego równania są liczbami zespolonymi tworzącymi wierzchołki n-kąta foremnego o środku w punkcie (0,0)"
+    ],
+    "answer": [
+      "B. Suma wszystkich rozwiązań tego równania wynosi 0 wtedy i tylko wtedy, gdy aₙ₋₁ = 0",
+      "C. Równanie to zawsze (tj. Dla dowolnych aₙ₋₁, ..., a₀ ∈ C) posiada dokładnie n rozwiązań (liczonych z krotnościami)"
+    ]
+  },
+  {
+    "question": "7. Niech A będzie macierzą rzeczywistą wymiaru n × n, spełniającą równanie A² + A = 0. Co możemy powiedzieć o macierzy A? Wskaż wszystkie poprawne odpowiedzi.",
+    "options": [
+      "A. Wśród wartości własnych macierzy A jest 0 lub -1",
+      "B. Ponieważ A² + A = A(A + I), zatem równanie posiada tylko dwa rozwiązania: A = 0 oraz A = -I",
+      "C. Wyznacznik macierzy A może przyjąć tylko jedną z dwóch wartości: 0 lub -1",
+      "D. Jedynym nieosobliwym rozwiązaniem równania jest A = -I"
+    ],
+    "answer": [
+      "A. Wśród wartości własnych macierzy A jest 0 lub -1",
+      "D. Jedynym nieosobliwym rozwiązaniem równania jest A = -I"
+    ]
+  },
+  {
+    "question": "8. Macierz kwadratowa A wymiaru n × n ma n rzeczywistych, RÓŻNYCH wartości własnych λ₁ ≤ λ₂ ≤ ... ≤ λₙ. Wówczas wynikają z tego następujące związki:",
+    "options": [
+      "A. Istnieje n liniowo niezależnych wektorów własnych macierzy A",
+      "B. Jeżeli jedna z wartości własnych macierzy jest równa zero to odpowiadający jej wektor własny jest wektorem zerowym",
+      "C. det(A) = λ₁ · ... · λₙ",
+      "D. Jeżeli λ₁ > 0, to macierz A jest podobna do macierzy diagonalnej"
+    ],
+    "answer": [
+      "A. Istnieje n liniowo niezależnych wektorów własnych macierzy A",
+      "C. det(A) = λ₁ · ... · λₙ"
+    ]
+  },
+  {
+    "question": "9. Rozważmy dwie macierze I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]] oraz A = [[1, 2, 3], [0, 1, 2], [0, 0, 1]]. Wskaż poprawne odpowiedzi dotyczące ich podobieństwa.",
+    "options": [
+      "1) det(I) = det(A) = 1",
+      "2) rząd(I) = rząd(A) = 3",
+      "3) J_I ≠ J_A (macierze nie są podobne)"
+    ],
+    "answer": [
+      "1) det(I) = det(A) = 1",
+      "2) rząd(I) = rząd(A) = 3",
+      "3) J_I ≠ J_A (macierze nie są podobne)"
+    ]
+  },
+  {
+    "question": "10. Które z poniższych stwierdzeń dotyczących podobieństwa macierzy są prawdziwe?",
+    "options": [
+      "A. jeśli macierze A i B są podobne to mają taki sam wielomian charakterystyczny",
+      "B. jeśli macierze A i B są podobne to A=B",
+      "C. jeśli macierze A i B są podobne to mają taki sam wyznacznik",
+      "D. jeśli macierze mają taki sam wielomian charakterystyczny to są podobne"
+    ],
+    "answer": [
+      "A. jeśli macierze A i B są podobne to mają taki sam wielomian charakterystyczny",
+      "C. jeśli macierze A i B są podobne to mają taki sam wyznacznik"
+    ]
+  },
+  {
+    "question": "11. Wielomian φ(λ) = aₙλⁿ + aₙ₋₁λⁿ⁻¹ + ... + a₁λ + a₀ stopnia n≥1 jest wielomianem charakterystycznym pewnej macierzy A. Wówczas zachodzi:",
+    "options": [
+      "A. macierz φ(A) jest macierzą zerową, tj. aₙAⁿ + aₙ₋₁Aⁿ⁻¹ + ... + a₁A + a₀I = 0",
+      "B. rząd macierzy A jest równy n wtedy i tylko wtedy, gdy a₀ ≠ 0",
+      "C. nie istnieje inna macierz, której φ jest wielomianem charakterystycznym",
+      "D. Macierz A jest macierzą kwadratową wymiaru n × n"
+    ],
+    "answer": [
+      "A. macierz φ(A) jest macierzą zerową, tj. aₙAⁿ + aₙ₋₁Aⁿ⁻¹ + ... + a₁A + a₀I = 0",
+      "B. rząd macierzy A jest równy n wtedy i tylko wtedy, gdy a₀ ≠ 0",
+      "D. Macierz A jest macierzą kwadratową wymiaru n × n"
+    ]
+  },
+  {
+    "question": "12. Niech V będzie przestrzenią liniową, której każdy element może być otrzymany jako kombinacja liniowa wektorów v₁, ..., vₙ. Wówczas zachodzi:",
+    "options": [
+      "A. Wektory v₁, ..., vₙ tworzą bazę przestrzeni V",
+      "B. jeżeli wektory v₁, ..., vₙ są liniowo niezależne, to tworzą bazę przestrzeni V",
+      "C. spośród wektorów v₁, ..., vₙ można wybrać bazę dowolnej podprzestrzeni liniowej przestrzeni V",
+      "D. żadna z powyższych odpowiedzi nie jest poprawna"
+    ],
+    "answer": [
+      "B. jeżeli wektory v₁, ..., vₙ są liniowo niezależne, to tworzą bazę przestrzeni V"
+    ]
+  },
+  {
+    "question": "13. Niech f: R³ → R³ będzie endomorfizmem spełniającym warunki: f(1,1,1) = (1,1,1), f(1,2,1) = (2,4,2), f(0,0,1) = (0,0,0). Wskaż zdania charakteryzujące ten endomorfizm.",
+    "options": [
+      "det(A_f - λI) = λ(λ - 1)(λ - 2) = 0 gdzie A_f jest macierzą endomorfizmu",
+      "J jest macierzą Jordana, J = diag(0, 1, 2)",
+      "endomorfizm f jest diagonalizowalny ⇔ istnieje B - baza przestrzeni X, względem której macierz tego endomorfizmu jest diagonalna"
+    ],
+    "answer": [
+      "det(A_f - λI) = λ(λ - 1)(λ - 2) = 0 gdzie A_f jest macierzą endomorfizmu",
+      "endomorfizm f jest diagonalizowalny ⇔ istnieje B - baza przestrzeni X, względem której macierz tego endomorfizmu jest diagonalna"
+    ]
+  },
+  {
+    "question": "14. W przestrzeni R² wprowadzamy następujący iloczyn skalarny: s((x₁,x₂), (y₁,y₂)) = [x₁ x₂] [[2 0], [0 4]] [y₁; y₂]. Zaznacz poprawne odpowiedzi.",
+    "options": [
+      "A. Wektory (1,2) i (-4,1) są ortogonalne w sensie iloczynu skalarnego",
+      "B. Żadna z pozostałych odpowiedzi nie jest poprawna",
+      "C. Wektory (1,2) i (-4,1) są ortonormalne w sensie tego iloczynu skalarnego",
+      "D. Do każdego niezerowego wektora v ∈ R² można zawsze dobrać drugi wektor w ∈ R² w ten sposób, aby wektory v, w tworzyły ortogonalną (w sensie iloczynu s) bazę przestrzeni R²"
+    ],
+    "answer": [
+      "A. Wektory (1,2) i (-4,1) są ortogonalne w sensie iloczynu skalarnego",
+      "D. Do każdego niezerowego wektora v ∈ R² można zawsze dobrać drugi wektor w ∈ R² w ten sposób, aby wektory v, w tworzyły ortogonalną (w sensie iloczynu s) bazę przestrzeni R²"
+    ]
+  },
+  {
+    "question": "15. Niech A ∈ Rⁿˣⁿ będzie macierzą spełniającą warunek ∀x ∈ Rⁿ: xᵀAx ≥ 0. Jakie własności ma macierz A?",
+    "options": [
+      "A. wszystkie współczynniki macierzy A są nieujemne",
+      "B. macierz A jest symetryczna, tj. A = Aᵀ",
+      "C. jeżeli macierz A jest symetryczna, to wszystkie jej wartości własne są rzeczywiste i nieujemne",
+      "D. wszystkie wartości własne macierzy A są rzeczywiste i nieujemne"
+    ],
+    "answer": [
+      "C. jeżeli macierz A jest symetryczna, to wszystkie jej wartości własne są rzeczywiste i nieujemne"
+    ]
+  },
+  {
+    "question": "16. Macierz A ∈ Rⁿˣⁿ posiada jedną n-krotną wartość własną λ = 1. Wskaż poprawne odpowiedzi dotyczące własności tej macierzy.",
+    "options": [
+      "A. jedyną macierzą o podanej własności, która posiada n liniowo niezależnych wektorów własnych jest macierz jednostkowa",
+      "B. układ równań Ax = x posiada nieskończenie wiele rozwiązań",
+      "C. det A = 1",
+      "D. każda macierz A o podanej własności posiada n liniowo niezależnych wektorów własnych"
+    ],
+    "answer": [
+      "A. jedyną macierzą o podanej własności, która posiada n liniowo niezależnych wektorów własnych jest macierz jednostkowa",
+      "B. układ równań Ax = x posiada nieskończenie wiele rozwiązań",
+      "C. det A = 1"
+    ]
+  },
+  {
+    "question": "17. Macierz A ∈ Rⁿˣⁿ jest podobna do macierzy J = [[1, 1, 0], [0, 1, 0], [0, 0, -1]]. Wskaż poprawne odpowiedzi dotyczące własności macierzy A. Niech A = Aᵀ ∈ Rⁿˣⁿ. Jeżeli warunek xᵀAx ≥ 0 spełniony jest dla wszystkich x ∈ Rⁿ, to...",
+    "options": [
+      "A. macierz A nie jest diagonalizowalna",
+      "B. J jest macierzą Jordana dla macierzy A",
+      "C. Istnieje baza przestrzeni R³ złożona z wektorów własnych macierzy A",
+      "D. det A = -1"
+    ],
+    "answer": [
+      "A. macierz A nie jest diagonalizowalna",
+      "B. J jest macierzą Jordana dla macierzy A",
+      "D. det A = -1"
+    ]
+  },
+  {
+    "question": "18. Niech w(x) = x⁶ + 2x³ + 1. Co można powiedzieć o pierwiastkach tego równania?",
+    "options": [
+      "A. spośród pierwiastków wielomianu w można wybrać trzy będące wierzchołkami trójkąta równobocznego",
+      "B. wszystkie pierwiastki wielomianu w są rzeczywiste",
+      "C. równanie w(x) = -1 nie ma rozwiązań w zbiorze liczb rzeczywistych",
+      "D. pierwiastki wielomianu w tworzą wierzchołki sześciokąta foremnego"
+    ],
+    "answer": [
+      "A. spośród pierwiastków wielomianu w można wybrać trzy będące wierzchołkami trójkąta równobocznego",
+      "C. równanie w(x) = -1 nie ma rozwiązań w zbiorze liczb rzeczywistych"
+    ]
+  },
+  {
+    "question": "19. Niech V będzie n-wymiarową przestrzenią wektorową, w której zdefiniowano iloczyn skalarny. Wskaż zdania prawdziwe (dotyczące związku między liniową niezależnością, ortogonalnością i tworzeniem bazy przez wektory tej przestrzeni).",
+    "options": [
+      "A. Jeżeli wektory v₁, v₂, ..., vₙ ∈ V są ortogonalne, to są bazą przestrzeni V",
+      "B. Jeżeli wektory v₁, v₂, ..., vₙ ∈ V są liniowo niezależne, to są ortogonalne",
+      "C. Jeżeli wektory v₁, v₂, ..., vₙ ∈ V są ortogonalne, to są liniowo niezależne",
+      "D. Jeżeli wektory v₁, v₂, ..., vₙ ∈ V są bazą przestrzeni V, to są ortogonalne"
+    ],
+    "answer": [
+      "A. Jeżeli wektory v₁, v₂, ..., vₙ ∈ V są ortogonalne, to są bazą przestrzeni V",
+      "C. Jeżeli wektory v₁, v₂, ..., vₙ ∈ V są ortogonalne, to są liniowo niezależne"
+    ]
+  },
+  {
+    "question": "20. Niech G oznacza zbiór liczb niewymiernych z dołączoną liczbą 1, a H zbiór liczb niewymiernych z dołączoną liczbą 0. Wskaż zdania prawdziwe (dotyczące tworzenia grupy przez zbiory G i H z działaniami)",
+    "options": [
+      "A. Zbiór G z naturalnym działaniem mnożenia liczb tworzy grupę",
+      "B. Zbiór H z naturalnym działaniem dodawania liczb tworzy grupę",
+      "C. Zbiór H z naturalnym działaniem dodawania liczb nie jest grupą, ponieważ dodawanie nie jest działaniem wewnętrznym w H",
+      "D. Zbiór G z naturalnym działaniem mnożenia liczb nie jest grupą, ponieważ mnożenie nie jest działaniem wewnętrznym w G"
+    ],
+    "answer": [
+      "C. Zbiór H z naturalnym działaniem dodawania liczb nie jest grupą, ponieważ dodawanie nie jest działaniem wewnętrznym w H",
+      "D. Zbiór G z naturalnym działaniem mnożenia liczb nie jest grupą, ponieważ mnożenie nie jest działaniem wewnętrznym w G"
+    ]
+  },
+  {
+    "question": "21. Macierz A ∈ R³ˣ³ oraz B = A². Wśród wartości własnych macierzy B są liczby 1 oraz -1. Wówczas (minimum 2 poprawne)",
+    "options": [
+      "A. det B = -1",
+      "B. Macierz A posiada cztery wartości własne: -1, 1, -1, i",
+      "C. Macierz B nie posiada innych wartości własnych, wartość własna -1 jest wartością własną dwukrotną",
+      "D. Macierz A posiada trzy wartości własne -i, i, 1"
+    ],
+    "answer": [
+      "C. Macierz B nie posiada innych wartości własnych, wartość własna -1 jest wartością własną dwukrotną",
+      "D. Macierz A posiada trzy wartości własne -i, i, 1"
+    ]
+  },
+  {
+    "question": "22. Macierz A = Aᵀ ∈ Rⁿˣⁿ. Jeżeli warunek xᵀAx ≥ 0 spełniony jest dla wszystkich x ∈ Rⁿ, to",
+    "options": [
+      "A. Każda macierz A o podanej własności posiada n liniowo niezależnych wektorów własnych",
+      "B. Wszystkie wartości własne macierzy A są rzeczywiste oraz dodatnie, o ile det A > 0",
+      "C. det A ≥ 0",
+      "D. Żadna z powyższych odpowiedzi nie jest poprawna"
+    ],
+    "answer": [
+      "A. Każda macierz A o podanej własności posiada n liniowo niezależnych wektorów własnych",
+      "C. det A ≥ 0"
+    ]
   }
-  // tutaj możesz dopisać kolejne pytania w tym samym formacie
 ];
 
 let shuffledQuestions = [];
@@ -313,3 +542,4 @@ startQuiz();
 
 </body>
 </html>
+
