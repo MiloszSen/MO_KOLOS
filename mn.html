@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magisterka MN</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1c1c1c;
+      color: #e0e0e0;
+    }
+    .quiz-container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #2c2c2c;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #4db8ff;
+    }
+    .question {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    /* NOWE: obrazek pytania */
+    #question-image {
+      max-width: 100%;
+      max-height: 250px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: none; /* domyślnie ukryty */
+    }
+    .options button {
+      width: 80%;
+      margin: 8px 0;
+      padding: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #3c3c3c;
+      color: #e0e0e0;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .options button:hover {
+      background-color: #5c5c5c;
+      transform: scale(1.02);
+    }
+    .options button.selected {
+      background-color: #4db8ff;
+      color: #fff;
+    }
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #4db8ff;
+    }
+    .mistakes {
+      max-height: 400px;
+      overflow-y: auto;
+      font-size: 18px;
+      margin-top: 20px;
+      color: #e74c3c;
+      text-align: left;
+      padding-right: 20px;
+    }
+    .mistakes::-webkit-scrollbar {
+      width: 12px;
+    }
+    .mistakes::-webkit-scrollbar-track {
+      background: #3c3c3c;
+      border-radius: 10px;
+    }
+    .mistakes::-webkit-scrollbar-thumb {
+      background: #4db8ff;
+      border-radius: 10px;
+    }
+    .mistakes::-webkit-scrollbar-thumb:hover {
+      background: #3498db;
+    }
+    .menu-button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #4db8ff;
+      color: #fff;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .menu-button:hover {
+      background-color: #3498db;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Metody Numeryczne Magisterka</h1>
+  <div id="question-container">
+    <div class="question" id="question">Pytanie pojawi się tutaj</div>
+
+    <!-- NOWE: miejsce na obrazek pytania -->
+    <img id="question-image" src="" alt="Ilustracja do pytania">
+
+    <div class="options">
+      <button onclick="selectAnswer(0)">Odpowiedź 1</button>
+      <button onclick="selectAnswer(1)">Odpowiedź 2</button>
+      <button onclick="selectAnswer(2)">Odpowiedź 3</button>
+      <button onclick="selectAnswer(3)">Odpowiedź 4</button>
+    </div>
+    <button class="menu-button" id="submit-button" onclick="checkAnswer()">Zatwierdź</button>
+  </div>
+  <div id="result" class="result"></div>
+  <div id="mistakes" class="mistakes"></div>
+  <button class="menu-button" onclick="returnToMenu()">Wróć do menu</button>
+</div>
+
+<script>
+/*
+  STRUKTURA PYTANIA Z OBSŁUGĄ OBRAZKA:
+  - pole "image" jest opcjonalne
+  - jeśli go nie będzie -> obrazek się nie pojawi
+  - jeśli będzie (np. "img/plume.png") -> zostanie wyświetlony nad odpowiedziami
+*/
+
+const questions = [
+  {
+    "question": "1. Który z błędów numerycznych wiąże się z koniecznością ograniczenia nieskończonego ciągu obliczeń?",
+    "options": [
+      "A. Błąd obcięcia",
+      "B. Błąd zaokrąglenia",
+      "C. Błąd gruby",
+      "D. Błąd reprezentacji"
+    ],
+    "answer": [
+      "A. Błąd obcięcia"
+    ]
+  },
+  {
+    "question": "2. Ile wielomianów interpolacyjnych stopnia co najwyżej n można przeprowadzić przez dany zbiór n+1 różnych węzłów?",
+    "options": [
+      "A. Dokładnie jeden",
+      "B. n + 1",
+      "C. n",
+      "D. Nieskończenie wiele"
+    ],
+    "answer": [
+      "A. Dokładnie jeden"
+    ]
+  },
+  {
+    "question": "3. Liczba -7 zapisana w systemie uzupełnień do dwóch (U2) na 4 bitach to:",
+    "options": [
+      "A. 1001",
+      "B. 0111",
+      "C. 1111",
+      "D. 1000"
+    ],
+    "answer": [
+      "A. 1001"
+    ]
+  },
+  {
+    "question": "4. Jak nazywa się metoda poszukiwania miejsc zerowych funkcji polegająca na połowieniu przedziałów?",
+    "options": [
+      "A. metoda stycznych",
+      "B. metoda siecznych",
+      "C. metoda bisekcji",
+      "D. metoda Jordana"
+    ],
+    "answer": [
+      "C. metoda bisekcji"
+    ]
+  },
+  {
+    "question": "5. Jak nazywają się wzory analityczne na pierwiastki ogólnego wielomianu stopnia wyższego niż 4?",
+    "options": [
+      "A. Na mocy twierdzenia Abela - nie istnieją",
+      "B. Wzory Cardana",
+      "C. Wzory Ferrari",
+      "D. Wzory Viète’a"
+    ],
+    "answer": [
+      "A. Na mocy twierdzenia Abela - nie istnieją"
+    ]
+  },
+  {
+    "question": "6. Dla układu równań Ax = b, z macierzą kwadratową 3 x 3 wartości singularne macierzy A to σ(A) = {10⁻², 10², 1}. Oblicz uwarunkowanie układu.",
+    "options": [
+      "A. 0.01",
+      "B. 100",
+      "C. 0.0001",
+      "D. 10000"
+    ],
+    "answer": [
+      "D. 10000"
+    ]
+  },
+  {
+    "question": "7. Jaki rozkład wykorzystuje się do wyliczania wartości własnych macierzy?",
+    "options": [
+      "A. Na wartości singularne",
+      "B. Schura",
+      "C. Choleskiego",
+      "D. LU"
+    ],
+    "answer": [
+      "A. Na wartości singularne",
+      "B. Schura"
+    ]
+  },
+  {
+    "question": "8. Jeżeli w podwójnej precyzji zmiennoprzecinkowej na mantysę przewidziano 52 bity, to zero maszynowe wynosi w przybliżeniu:",
+    "options": [
+      "A. 10⁻⁸",
+      "B. 10⁻⁵²",
+      "C. 10⁻¹⁶",
+      "D. 10⁻³²"
+    ],
+    "answer": [
+      "C. 10⁻¹⁶"
+    ]
+  },
+  {
+    "question": "9. Co oznacza, że metoda typu Rungego-Kutty ma rząd n?",
+    "options": [
+      "A. Rozwinięcie w szereg Taylora rozwiązania dokładnego i przybliżonego zawierają tylko wyrazy rzędu n.",
+      "B. Rozwinięcie w szereg Taylora rozwiązania dokładnego i przybliżonego są takie same dla wyrazów h^p dla potęg p > n.",
+      "C. Rozwinięcie w szereg Taylora rozwiązania dokładnego i przybliżonego różnią się o o(h^n).",
+      "D. Rozwinięcie w szereg Taylora rozwiązania dokładnego i przybliżonego są takie same dla wyrazów h^p dla potęg p ≤ n."
+    ],
+    "answer": [
+      "D. Rozwinięcie w szereg Taylora rozwiązania dokładnego i przybliżonego są takie same dla wyrazów h^p dla potęg p ≤ n."
+    ]
+  },
+  {
+    "question": "10. Jaki jest rząd kwadratury Gaussa-Legendre'a opartej na n węzłach?",
+    "options": [
+      "A. 2n + 1",
+      "B. n",
+      "C. 2n - 3",
+      "D. 2n - 1"
+    ],
+    "answer": [
+      "D. 2n - 1"
+    ]
+  }
+];
+
+let shuffledQuestions = [];
+let currentQuestionIndex = 0;
+let selectedAnswers = [];
+let score = 0;
+let mistakes = [];
+let currentOptions = [];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function startQuiz() {
+  shuffledQuestions = [...questions];
+  shuffle(shuffledQuestions);
+  currentQuestionIndex = 0;
+  score = 0;
+  mistakes = [];
+  loadQuestion();
+}
+
+function loadQuestion() {
+  document.getElementById("question-container").style.display = "block";
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("mistakes").innerHTML = "";
+
+  const questionData = shuffledQuestions[currentQuestionIndex];
+  document.getElementById("question").innerText = questionData.question;
+
+  // NOWE: obsługa obrazka
+  const imgEl = document.getElementById("question-image");
+  if (questionData.image && questionData.image.trim() !== "") {
+    imgEl.src = questionData.image;
+    imgEl.style.display = "block";
+  } else {
+    imgEl.src = "";
+    imgEl.style.display = "none";
+  }
+
+  currentOptions = questionData.options.map(opt => ({
+    text: opt,
+    correct: questionData.answer.includes(opt)
+  }));
+
+  shuffle(currentOptions);
+  selectedAnswers = [];
+
+  const buttons = document.querySelectorAll(".options button");
+  currentOptions.forEach((optionObj, index) => {
+    const button = buttons[index];
+    button.innerText = optionObj.text;
+    button.classList.remove("selected");
+    button.disabled = false;
+  });
+}
+
+function selectAnswer(index) {
+  const button = document.querySelectorAll(".options button")[index];
+  if (button.classList.contains("selected")) {
+    button.classList.remove("selected");
+    selectedAnswers = selectedAnswers.filter(i => i !== index);
+  } else {
+    button.classList.add("selected");
+    selectedAnswers.push(index);
+  }
+}
+
+function checkAnswer() {
+  const correctIndexes = currentOptions
+    .map((obj, i) => obj.correct ? i : -1)
+    .filter(i => i >= 0);
+
+  if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctIndexes.sort())) {
+    score++;
+  } else {
+    const questionData = shuffledQuestions[currentQuestionIndex];
+    mistakes.push({
+      question: questionData.question,
+      selectedAnswer: selectedAnswers.map(idx => currentOptions[idx].text),
+      correctAnswer: correctIndexes.map(idx => currentOptions[idx].text)
+    });
+  }
+
+  currentQuestionIndex++;
+  if (currentQuestionIndex < shuffledQuestions.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById("question-container").style.display = "none";
+  document.getElementById("result").innerText = `Twój wynik: ${score} / ${shuffledQuestions.length}`;
+
+  if (mistakes.length > 0) {
+    let mistakeText = "Błędne odpowiedzi:<br>";
+    mistakes.forEach((mistake, index) => {
+      mistakeText += `${index + 1}. ${mistake.question}<br>
+                      Twoje odpowiedzi: ${mistake.selectedAnswer.join(", ")}<br>
+                      Poprawne odpowiedzi: ${mistake.correctAnswer.join(", ")}<br><br>`;
+    });
+    document.getElementById("mistakes").innerHTML = mistakeText;
+  } else {
+    document.getElementById("mistakes").innerText = "Gratulacje! Wszystkie odpowiedzi były poprawne.";
+  }
+}
+
+function returnToMenu() {
+  window.location.href = "index.html";
+}
+
+startQuiz();
+</script>
+
+</body>
+</html>
+
+
+
+
