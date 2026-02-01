@@ -165,7 +165,7 @@ const questions = [
     ]
   },
   {
-    "question": "3. Co wypisuje następująca funkcja w C++? (void afunction (int *x) { x=new int; *x=12;} int main() { int v=10; afunction(&v); cout <<v;})",
+    "question": "3. Co wypisuje następująca funkcja w C++?",
     "options": [
       "A. Wyjście to 12",
       "B. Wyjście to 10",
@@ -174,7 +174,8 @@ const questions = [
     ],
     "answer": [
       "B. Wyjście to 10"
-    ]
+    ],
+    image: "img/inf3.png" 
   },
   {
     "question": "4. Jaka jest długość łańcucha znaków \"1\\t2\\t2\" w C++?",
@@ -189,7 +190,7 @@ const questions = [
     ]
   },
   {
-    "question": "5. Mając podany fragment kodu programu w C++, podać, co zostanie wypisane na ekranie? (int Count1 = 1; int Count2 = 2; if (Count1 != Count2) ++Count2; else ++Count1; ++Count2; cout << Count1 << '\\t' << Count2;)",
+    "question": "5. Mając podany fragment kodu programu w C++, podać, co zostanie wypisane na ekranie?",
     "options": [
       "A. 1 4",
       "B. 2 2",
@@ -198,7 +199,8 @@ const questions = [
     ],
     "answer": [
       "A. 1 4"
-    ]
+    ],
+    image: "img/inf5.png" 
   },
   {
     "question": "6. Która z podanych poniżej jest poprawną deklaracją klasy w C++?",
@@ -213,7 +215,7 @@ const questions = [
     ]
   },
   {
-    "question": "7. Co wypisze następujący fragment kodu programu w C++? (void f(int a, int &b) { int t; t = b; a = b; } ... x=4, y=5; f(x, y);)",
+    "question": "7. Co wypisze następujący fragment kodu programu w C++?",
     "options": [
       "A. x is 5 y is 5",
       "B. x is 4 y is 4",
@@ -222,7 +224,8 @@ const questions = [
     ],
     "answer": [
       "C. x is 4 y is 5"
-    ]
+    ],
+    image: "img/inf7.png" 
   },
   {
     "question": "8. Ile razy wyświetli się na ekranie napis 2010, w wyniku działania kodu dla danych: 1 2 <Enter> 3 <Enter> <Ctrl-Z> <Enter>?",
@@ -289,7 +292,7 @@ const questions = [
     ]
   },
   {
-    "question": "13. Dana jest funkcja iter(n). Jej odpowiednik rekurencyjny to rek(n, __kod1__). Gdzie wpisy powinny być następujące:",
+    "question": "13. Gdzie wpisy powinny być następujące:",
     "options": [
       "A. __kod4__ to while",
       "B. __kod2__ to n * acc",
@@ -299,10 +302,11 @@ const questions = [
     "answer": [
       "C. __kod3__ to n * acc",
       "D. __kod1__ to acc=1"
-    ]
+    ],
+    image: "img/inf13.png" 
   },
   {
-    "question": "14. Dana jest funkcja w Pythonie: def fun(par1, par2 = 0.0): return par1 + par2. Co spowodują wywołania?",
+    "question": "14. Dana jest funkcja w Pythonie. Co spowodują wywołania?",
     "options": [
       "A. wywołanie fun( 3 ) spowoduje błąd",
       "B. wywołanie fun( 'a' ) spowoduje błąd",
@@ -312,7 +316,8 @@ const questions = [
     "answer": [
       "B. wywołanie fun( 'a' ) spowoduje błąd",
       "C. wywołanie fun( 3 ) zwróci wartość rzeczywistą"
-    ]
+    ],
+    image: "img/inf14.png" 
   },
   {
     "question": "15. Zapis w języku C: void funkcja( int ** par); deklaruje funkcję, która jako argument może otrzymać:",
@@ -329,7 +334,7 @@ const questions = [
     ]
   },
   {
-    "question": "16. Co spowoduje wywołanie w języku C kodu: float *x = malloc(10 * sizeof *x); float a = *x; float b = x[0];",
+    "question": "16. Co spowoduje wywołanie w języku C kodu?",
     "options": [
       "A. gwarantuje, że wartość zmiennej a wyniesie 0",
       "B. jest niepoprawny (zgłoszony będzie błąd w trakcie kompilacji)",
@@ -339,10 +344,11 @@ const questions = [
     "answer": [
       "C. w linii 1 stworzy tablicę 10 elementową liczb rzeczywistych",
       "D. spowoduje, że zmienne a i b będą miały identyczną wartość"
-    ]
+    ],
+    image: "img/inf16.png" 
   },
   {
-    "question": "17. Zaznacz prawidłowe odpowiedzi dotyczące kodu (funkcja zwracająca &x lokalne):",
+    "question": "17. Zaznacz prawidłowe odpowiedzi dotyczące kodu:",
     "options": [
       "A. w linii z instrukcją return powinien wystąpić zapis *x zamiast &x",
       "B. występuje zapis, który może spowodować błędne obliczenia w przypadku użycia tej funkcji",
@@ -353,10 +359,11 @@ const questions = [
       "B. występuje zapis, który może spowodować błędne obliczenia w przypadku użycia tej funkcji",
       "C. występuje funkcja zwracająca adres wartości całkowitej",
       "D. występuje pobranie adresu zmiennej znajdującej się na stosie"
-    ]
+    ],
+    image: "img/inf17.png" 
   },
   {
-    "question": "18. Jaki będzie rezultat próby zbudowania i uruchomienia poniższego kodu? (redefinicja 'i' w pętli for)",
+    "question": "18. Jaki będzie rezultat próby zbudowania i uruchomienia poniższego kodu?",
     "options": [
       "A. Definicja zmiennej 'i' w pętli zostanie zignorowana",
       "B. Zostaną zgłoszone błędy składniowe",
@@ -365,7 +372,8 @@ const questions = [
     ],
     "answer": [
       "D. Zmienna 'i' zdefiniowana w pętli przesłoni zmienną 'i' z początku funkcji - wypisane zostaną 0, 1 i 2"
-    ]
+    ],
+    image: "img/inf18.png" 
   },
   {
     "question": "19. Jaką wartością jest domyślnie inicjalizowana zmienna automatyczna w języku C?",
