@@ -7,7 +7,11 @@ const subjects = {
   'wizyjne': { title: 'Systemy Wizyjne Magisterka', file: 'js/questions-wizyjne.js', varName: 'questionsWizyjne' },
   'ts': { title: 'Teoria Sterowania Magisterka', file: 'js/questions-ts.js', varName: 'questionsTS' },
   'aa': { title: 'Aparatura Automatyzacji Magisterka', file: 'js/questions-aa.js', varName: 'questionsAA' },
-  'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' }
+  'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' },
+  'msd': { title: 'Modelowanie Systemów Dynamicznych Magisterka', file: 'js/questions-msd.js', varName: 'questionsMSD' },
+  'robotyka': { title: 'Podstawy Robotyki Magisterka', file: 'js/questions-robotyka.js', varName: 'questionsRobotyka' },
+  'tm': { title: 'Technika Mikroprocesorowa Magisterka', file: 'js/questions-tm.js', varName: 'questionsTM' },
+  'ea': { title: 'Elektronika Analogowa Magisterka', file: 'js/questions-ea.js', varName: 'questionsEA' },
 };
 
 let shuffledQuestions = [];
