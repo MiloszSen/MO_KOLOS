@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Magisterka Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1 id="quiz-title">Quiz Magisterka</h1>
+  <div id="question-container">
+    <div class="question" id="question">Pytanie pojawi się tutaj</div>
+
+    <!-- Miejsce na obrazek pytania -->
+    <img id="question-image" src="" alt="Ilustracja do pytania">
+
+    <div class="options">
+      <button onclick="selectAnswer(0)">Odpowiedź 1</button>
+      <button onclick="selectAnswer(1)">Odpowiedź 2</button>
+      <button onclick="selectAnswer(2)">Odpowiedź 3</button>
+      <button onclick="selectAnswer(3)">Odpowiedź 4</button>
+    </div>
+    <button class="menu-button" id="submit-button" onclick="checkAnswer()">Zatwierdź</button>
+  </div>
+  <div id="result" class="result"></div>
+  <div id="mistakes" class="mistakes"></div>
+  <button class="menu-button" onclick="returnToMenu()">Wróć do menu</button>
+</div>
+
+<script src="js/quiz.js"></script>
+</body>
+</html>

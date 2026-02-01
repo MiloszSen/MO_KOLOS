@@ -1,145 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magisterka Informatyka</title>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #1c1c1c;
-      color: #e0e0e0;
-    }
-    .quiz-container {
-      width: 90%;
-      max-width: 600px;
-      background-color: #2c2c2c;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-      text-align: center;
-    }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #4db8ff;
-    }
-    .question {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-    /* NOWE: obrazek pytania */
-    #question-image {
-      max-width: 100%;
-      max-height: 250px;
-      margin-bottom: 20px;
-      margin: auto;
-      border-radius: 8px;
-      display: none; /* domyślnie ukryty */
-    }
-    .options button {
-      width: 80%;
-      margin: 8px 0;
-      padding: 12px;
-      font-size: 18px;
-      cursor: pointer;
-      border: none;
-      border-radius: 6px;
-      background-color: #3c3c3c;
-      color: #e0e0e0;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .options button:hover {
-      background-color: #5c5c5c;
-      transform: scale(1.02);
-    }
-    .options button.selected {
-      background-color: #4db8ff;
-      color: #fff;
-    }
-    .result {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #4db8ff;
-    }
-    .mistakes {
-      max-height: 400px;
-      overflow-y: auto;
-      font-size: 18px;
-      margin-top: 20px;
-      color: #e74c3c;
-      text-align: left;
-      padding-right: 20px;
-    }
-    .mistakes::-webkit-scrollbar {
-      width: 12px;
-    }
-    .mistakes::-webkit-scrollbar-track {
-      background: #3c3c3c;
-      border-radius: 10px;
-    }
-    .mistakes::-webkit-scrollbar-thumb {
-      background: #4db8ff;
-      border-radius: 10px;
-    }
-    .mistakes::-webkit-scrollbar-thumb:hover {
-      background: #3498db;
-    }
-    .menu-button {
-      margin-top: 30px;
-      padding: 12px 24px;
-      font-size: 18px;
-      cursor: pointer;
-      border: none;
-      border-radius: 6px;
-      background-color: #4db8ff;
-      color: #fff;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .menu-button:hover {
-      background-color: #3498db;
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body>
-
-<div class="quiz-container">
-  <h1>Informatyka Magisterka</h1>
-  <div id="question-container">
-    <div class="question" id="question">Pytanie pojawi się tutaj</div>
-
-    <!-- NOWE: miejsce na obrazek pytania -->
-    <img id="question-image" src="" alt="Ilustracja do pytania">
-
-    <div class="options">
-      <button onclick="selectAnswer(0)">Odpowiedź 1</button>
-      <button onclick="selectAnswer(1)">Odpowiedź 2</button>
-      <button onclick="selectAnswer(2)">Odpowiedź 3</button>
-      <button onclick="selectAnswer(3)">Odpowiedź 4</button>
-    </div>
-    <button class="menu-button" id="submit-button" onclick="checkAnswer()">Zatwierdź</button>
-  </div>
-  <div id="result" class="result"></div>
-  <div id="mistakes" class="mistakes"></div>
-  <button class="menu-button" onclick="returnToMenu()">Wróć do menu</button>
-</div>
-
-<script>
-/*
-  STRUKTURA PYTANIA Z OBSŁUGĄ OBRAZKA:
-  - pole "image" jest opcjonalne
-  - jeśli go nie będzie -> obrazek się nie pojawi
-  - jeśli będzie (np. "img/plume.png") -> zostanie wyświetlony nad odpowiedziami
-*/
-
-const questions = [
+window.questionsInf = [
   {
     "question": "1. Podaj wartość liczby 126 w zapisie binarnym:",
     "options": [
@@ -381,7 +240,7 @@ const questions = [
       "A. Wartością 0 dla typów numerycznych",
       "B. Domyślna wartość zależy od typu zmiennej, nie ma żadnej ogólnej zasady",
       "C. Zmienna automatyczna nie jest domyślnie inicjalizowana",
-      "D. Zmienna automatyczna jest domyślnie inicjalizowana „null”"
+      "D. Zmienna automatyczna jest domyślnie inicjalizowana „null\""
     ],
     "answer": [
       "B. Domyślna wartość zależy od typu zmiennej, nie ma żadnej ogólnej zasady"
@@ -406,12 +265,12 @@ const questions = [
     "options": [
       "A. Oznacza, że dana metoda nie modyfikuje stanu obiektu, dla którego została wywołana",
       "B. Oznacza, że dana metoda zwraca wartość typu const",
-      "C. Jest oznaczana poprzez dodanie kwalifikatora „const” po liście parametrów metody",
-      "D. Jest oznaczana poprzez dodanie kwalifikatora „const” przed listą parametrów metody"
+      "C. Jest oznaczana poprzez dodanie kwalifikatora „const\" po liście parametrów metody",
+      "D. Jest oznaczana poprzez dodanie kwalifikatora „const\" przed listą parametrów metody"
     ],
     "answer": [
       "A. Oznacza, że dana metoda nie modyfikuje stanu obiektu, dla którego została wywołana",
-      "C. Jest oznaczana poprzez dodanie kwalifikatora „const” po liście parametrów metody"
+      "C. Jest oznaczana poprzez dodanie kwalifikatora „const\" po liście parametrów metody"
     ]
   },
   {
@@ -443,13 +302,13 @@ const questions = [
     "question": "24. Wybierz stwierdzenia odnoszące się do metody czysto wirtualnej:",
     "options": [
       "A. Metoda czysto wirtualna nie musi zostać zdefiniowana w klasie, w której została zadeklarowana",
-      "B. Aby zaznaczyć, że dana metoda jest w pełni wirtualna, dodajemy na końcu jej deklaracji „=0”",
+      "B. Aby zaznaczyć, że dana metoda jest w pełni wirtualna, dodajemy na końcu jej deklaracji „=0\"",
       "C. Dodanie do klasy metody czysto wirtualnej powoduje, że klasa ta staje się klasą abstrakcyjną",
       "D. Metoda czysto wirtualna musi zostać zdefiniowana w klasie, w której została zadeklarowana"
     ],
     "answer": [
       "A. Metoda czysto wirtualna nie musi zostać zdefiniowana w klasie, w której została zadeklarowana",
-      "B. Aby zaznaczyć, że dana metoda jest w pełni wirtualna, dodajemy na końcu jej deklaracji „=0”",
+      "B. Aby zaznaczyć, że dana metoda jest w pełni wirtualna, dodajemy na końcu jej deklaracji „=0\"",
       "C. Dodanie do klasy metody czysto wirtualnej powoduje, że klasa ta staje się klasą abstrakcyjną"
     ]
   },
@@ -494,124 +353,3 @@ const questions = [
     ]
   }
 ];
-
-let shuffledQuestions = [];
-let currentQuestionIndex = 0;
-let selectedAnswers = [];
-let score = 0;
-let mistakes = [];
-let currentOptions = [];
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-function startQuiz() {
-  shuffledQuestions = [...questions];
-  shuffle(shuffledQuestions);
-  currentQuestionIndex = 0;
-  score = 0;
-  mistakes = [];
-  loadQuestion();
-}
-
-function loadQuestion() {
-  document.getElementById("question-container").style.display = "block";
-  document.getElementById("result").innerHTML = "";
-  document.getElementById("mistakes").innerHTML = "";
-
-  const questionData = shuffledQuestions[currentQuestionIndex];
-  document.getElementById("question").innerText = questionData.question;
-
-  // NOWE: obsługa obrazka
-  const imgEl = document.getElementById("question-image");
-  if (questionData.image && questionData.image.trim() !== "") {
-    imgEl.src = questionData.image;
-    imgEl.style.display = "block";
-  } else {
-    imgEl.src = "";
-    imgEl.style.display = "none";
-  }
-
-  currentOptions = questionData.options.map(opt => ({
-    text: opt,
-    correct: questionData.answer.includes(opt)
-  }));
-
-  shuffle(currentOptions);
-  selectedAnswers = [];
-
-  const buttons = document.querySelectorAll(".options button");
-  currentOptions.forEach((optionObj, index) => {
-    const button = buttons[index];
-    button.innerText = optionObj.text;
-    button.classList.remove("selected");
-    button.disabled = false;
-  });
-}
-
-function selectAnswer(index) {
-  const button = document.querySelectorAll(".options button")[index];
-  if (button.classList.contains("selected")) {
-    button.classList.remove("selected");
-    selectedAnswers = selectedAnswers.filter(i => i !== index);
-  } else {
-    button.classList.add("selected");
-    selectedAnswers.push(index);
-  }
-}
-
-function checkAnswer() {
-  const correctIndexes = currentOptions
-    .map((obj, i) => obj.correct ? i : -1)
-    .filter(i => i >= 0);
-
-  if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correctIndexes.sort())) {
-    score++;
-  } else {
-    const questionData = shuffledQuestions[currentQuestionIndex];
-    mistakes.push({
-      question: questionData.question,
-      selectedAnswer: selectedAnswers.map(idx => currentOptions[idx].text),
-      correctAnswer: correctIndexes.map(idx => currentOptions[idx].text)
-    });
-  }
-
-  currentQuestionIndex++;
-  if (currentQuestionIndex < shuffledQuestions.length) {
-    loadQuestion();
-  } else {
-    showResult();
-  }
-}
-
-function showResult() {
-  document.getElementById("question-container").style.display = "none";
-  document.getElementById("result").innerText = `Twój wynik: ${score} / ${shuffledQuestions.length}`;
-
-  if (mistakes.length > 0) {
-    let mistakeText = "Błędne odpowiedzi:<br>";
-    mistakes.forEach((mistake, index) => {
-      mistakeText += `${index + 1}. ${mistake.question}<br>
-                      Twoje odpowiedzi: ${mistake.selectedAnswer.join(", ")}<br>
-                      Poprawne odpowiedzi: ${mistake.correctAnswer.join(", ")}<br><br>`;
-    });
-    document.getElementById("mistakes").innerHTML = mistakeText;
-  } else {
-    document.getElementById("mistakes").innerText = "Gratulacje! Wszystkie odpowiedzi były poprawne.";
-  }
-}
-
-function returnToMenu() {
-  window.location.href = "index.html";
-}
-
-startQuiz();
-</script>
-
-</body>
-</html>
-
