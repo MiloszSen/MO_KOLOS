@@ -4,7 +4,8 @@ const subjects = {
   'analiza': { title: 'Analiza Magisterka', file: 'js/questions-analiza.js', varName: 'questionsAnaliza' },
   'mn': { title: 'Metody Numeryczne Magisterka', file: 'js/questions-mn.js', varName: 'questionsMN' },
   'inf': { title: 'Informatyka Magisterka', file: 'js/questions-inf.js', varName: 'questionsInf' },
-  'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' }
+  'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' },
+  'rpis': { title: 'RPiS', file: 'js/questions-rpis.js', varName: 'questionsRpis' }
 };
 
 let shuffledQuestions = [];
