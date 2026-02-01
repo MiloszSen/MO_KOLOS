@@ -3,7 +3,8 @@ const subjects = {
   'algebra': { title: 'Algebra Magisterka', file: 'js/questions-algebra.js', varName: 'questionsAlgebra' },
   'analiza': { title: 'Analiza Magisterka', file: 'js/questions-analiza.js', varName: 'questionsAnaliza' },
   'mn': { title: 'Metody Numeryczne Magisterka', file: 'js/questions-mn.js', varName: 'questionsMN' },
-  'inf': { title: 'Informatyka Magisterka', file: 'js/questions-inf.js', varName: 'questionsInf' }
+  'inf': { title: 'Informatyka Magisterka', file: 'js/questions-inf.js', varName: 'questionsInf' },
+  'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' }
 };
 
 let shuffledQuestions = [];
