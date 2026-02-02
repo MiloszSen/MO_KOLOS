@@ -12,11 +12,12 @@ const subjects = {
   'ts': { title: 'Teoria Sterowania Magisterka', file: 'js/questions-ts.js', varName: 'questionsTS' },
   'aa': { title: 'Aparatura Automatyzacji Magisterka', file: 'js/questions-aa.js', varName: 'questionsAA' },
   'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' },
-  'msd': { title: 'Modelowanie Systemów Dynamicznych Magisterka', file: 'js/questions-msd.js', varName: 'questionsMSD' },
+  'msd': { title: 'Modelowanie Systemow Dynamicznych Magisterka', file: 'js/questions-msd.js', varName: 'questionsMSD' },
   'robotyka': { title: 'Podstawy Robotyki Magisterka', file: 'js/questions-robotyka.js', varName: 'questionsRobotyka' },
   'tm': { title: 'Technika Mikroprocesorowa Magisterka', file: 'js/questions-tm.js', varName: 'questionsTM' },
   'ea': { title: 'Elektronika Analogowa Magisterka', file: 'js/questions-ea.js', varName: 'questionsEA' },
   'pa': { title: 'Podstawy Automatyki Magisterka', file: 'js/questions-pa.js', varName: 'questionsPA' },
+  'automaty': { title: 'Automaty Magisterka', file: 'js/questions-automaty.js', varName: 'questionsAutomaty' }
 };
 
 let shuffledQuestions = [];
