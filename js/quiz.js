@@ -11,7 +11,7 @@ const subjects = {
   'wizyjne': { title: 'Systemy Wizyjne Magisterka', file: 'js/questions-wizyjne.js', varName: 'questionsWizyjne' },
   'ts': { title: 'Teoria Sterowania Magisterka', file: 'js/questions-ts.js', varName: 'questionsTS' },
   'aa': { title: 'Aparatura Automatyzacji Magisterka', file: 'js/questions-aa.js', varName: 'questionsAA' },
-  'rownania': { title: 'Rownania rozniczkowe Magisterka', file: 'js/questions-rownania.js', varName: 'questionsRownania' }
+  'automaty': { title: 'Automaty Magisterka', file: 'js/questions-automaty.js', varName: 'questionsAutomaty' }
 
 };
 
