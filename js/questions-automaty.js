@@ -1,4 +1,4 @@
-window.questionsAnaliza = [
+window.questionsAutomaty = [
   {
     "question": "Automat o jednym wejściu i jednym wyjściu, pokazany na grafie poniżej, przyjmie stan “1” na wyjściu:",
     "options": [
