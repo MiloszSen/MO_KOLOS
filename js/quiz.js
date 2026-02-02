@@ -16,6 +16,7 @@ const subjects = {
   'robotyka': { title: 'Podstawy Robotyki Magisterka', file: 'js/questions-robotyka.js', varName: 'questionsRobotyka' },
   'tm': { title: 'Technika Mikroprocesorowa Magisterka', file: 'js/questions-tm.js', varName: 'questionsTM' },
   'ea': { title: 'Elektronika Analogowa Magisterka', file: 'js/questions-ea.js', varName: 'questionsEA' },
+  'pa': { title: 'Podstawy Automatyki Magisterka', file: 'js/questions-pa.js', varName: 'questionsPA' },
   'automaty': { title: 'Automaty Magisterka', file: 'js/questions-automaty.js', varName: 'questionsAutomaty' }
 };
 
