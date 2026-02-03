@@ -243,7 +243,7 @@ window.questionsInf = [
       "D. Zmienna automatyczna jest domyślnie inicjalizowana „null\""
     ],
     "answer": [
-      "B. Domyślna wartość zależy od typu zmiennej, nie ma żadnej ogólnej zasady"
+      "C. Zmienna automatyczna nie jest domyślnie inicjalizowana"
     ]
   },
   {
