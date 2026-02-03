@@ -289,13 +289,12 @@ window.questionsInf = [
     "question": "23. Która pętla pozwoli poprawnie wypisać kolejno wszystkie elementy obiektu `std::vector v = {1, 2, 3}`?",
     "options": [
       "A. for (auto& el : v) { std::cout << el << std::endl; }",
-      "B. for (auto it = v.begin(); it <= v.end(); ++it) { std::cout << *it; }",
-      "C. for (auto it = v.begin(); it < v.end(); ++it) { std::cout << *it; }",
+      "B. for (auto it = v.begin(); it <= v.end(); ++it) { std::cout << it; }",
+      "C. for (auto it = v.begin(); it < v.end(); ++it) { std::cout << it; }",
       "D. for (auto& el : v) { std::cout << *el << std::endl; }"
     ],
     "answer": [
-      "A. for (auto& el : v) { std::cout << el << std::endl; }",
-      "C. for (auto it = v.begin(); it < v.end(); ++it) { std::cout << *it; }"
+      "A. for (auto& el : v) { std::cout << el << std::endl; }"
     ]
   },
   {
@@ -335,8 +334,7 @@ window.questionsInf = [
     ],
     "answer": [
       "A. Wywoływany jest automatycznie w momencie, kiedy kończy się cykl życia obiektu",
-      "B. Odpowiada za zwolnienie zasobów przydzielonych obiektowi",
-      "D. Każda klasa posiada destruktor domyślny"
+      "B. Odpowiada za zwolnienie zasobów przydzielonych obiektowi"
     ]
   },
   {
